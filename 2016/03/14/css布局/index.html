@@ -7,51 +7,45 @@
   <title>css布局 | 向前奔跑的蚂蚁</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、自适应两栏布局
-    1、margin方式
-    .content{
-       background: yellow;
-       margin-left: 100px;
-     }
-   .left{
-      background: red
-      float:left;
-      width: 100px;
-     }
-
-   &amp;lt;div class=&amp;quot">
+1     1、margin方式
+2     .content{
+3        background: yellow;
+4        margin-left: 100px;
+5      }
+6    .left{
+7       background: red
+8       float:left;
+9       width: 100px;
+10      }">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css布局">
 <meta property="og:url" content="http://yoursite.com/2016/03/14/css布局/index.html">
 <meta property="og:site_name" content="向前奔跑的蚂蚁">
 <meta property="og:description" content="一、自适应两栏布局
-    1、margin方式
-    .content{
-       background: yellow;
-       margin-left: 100px;
-     }
-   .left{
-      background: red
-      float:left;
-      width: 100px;
-     }
-
-   &amp;lt;div class=&amp;quot">
-<meta property="og:updated_time" content="2016-03-14T14:28:33.489Z">
+1     1、margin方式
+2     .content{
+3        background: yellow;
+4        margin-left: 100px;
+5      }
+6    .left{
+7       background: red
+8       float:left;
+9       width: 100px;
+10      }">
+<meta property="og:updated_time" content="2016-03-16T15:06:57.197Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css布局">
 <meta name="twitter:description" content="一、自适应两栏布局
-    1、margin方式
-    .content{
-       background: yellow;
-       margin-left: 100px;
-     }
-   .left{
-      background: red
-      float:left;
-      width: 100px;
-     }
-
-   &amp;lt;div class=&amp;quot">
+1     1、margin方式
+2     .content{
+3        background: yellow;
+4        margin-left: 100px;
+5      }
+6    .left{
+7       background: red
+8       float:left;
+9       width: 100px;
+10      }">
   
     <link rel="alternative" href="/atom.xml" title="向前奔跑的蚂蚁" type="application/atom+xml">
   
@@ -114,7 +108,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -266,181 +260,181 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>一、自适应两栏布局
-    1、margin方式
-    .content{
-       background: yellow;
-       margin-left: 100px;
-     }
-   .left{
-      background: red
-      float:left;
-      width: 100px;
-     }
+        <pre><code> 一、自适应两栏布局
+1     1、margin方式
+2     .content{
+3        background: yellow;
+4        margin-left: 100px;
+5      }
+6    .left{
+7       background: red
+8       float:left;
+9       width: 100px;
+10      }
 
-   &lt;div class=&quot;container&quot;&gt;
-      &lt;div class=&quot;left&quot;&gt;
-         &lt;p&gt;左边..&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;content&quot;&gt;
-        &lt;p&gt;右边...&lt;/p&gt;
-       &lt;/div&gt;
-  &lt;/div&gt;
+ 11   &lt;div class=&quot;container&quot;&gt;
+ 12      &lt;div class=&quot;left&quot;&gt;
+ 13         &lt;p&gt;左边..&lt;/p&gt;
+ 14      &lt;/div&gt;
+ 15      &lt;div class=&quot;content&quot;&gt;
+ 16        &lt;p&gt;右边...&lt;/p&gt;
+ 17       &lt;/div&gt;
+ 18  &lt;/div&gt;
 
-    2、出发BFC方式
-    .content{
-       background: yellow;
-       overflow:hidden;    // 触发BFC
-      /*
-        display:table-cell; // 触发BFC
-        width: 9999px;
-       */
-     }
-   .left{
-      background: red;
-      float:left;
-      width: 100px;
-    }
-
-    3、弹性盒子方式
-     .container{
-       display: -webkit-flex;
-       display: flex;
-     }
+     2、出发BFC方式
      .content{
-          -webkit-flex: 1;
-          flex: 1;
-     }
-     .left{
-          width: 100px;  
-         resize: horizontal;
-          overflow: auto;
-    }
-二、列表布局
-    1、float方式(不足：1列表元素高度必须一致，需要清除浮动)
-        .box {
-           background: yellow;
-            margin: 1em;
-           float: left;
-           height: 100px;
-           width: 100px;
-        }
-       .after-float{
-           clear: both;
-           background: green;
-        }
-   &lt;div class=&quot;container&quot;&gt;
-   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
-   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
-   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
-   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
-   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
-   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
-   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;       
-   &lt;div class=&quot;after-float&quot;&gt;
-       afterfloat
-    &lt;/div&gt;
-    2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）
-     .box {
         background: yellow;
-        margin: 1em;
-        display: inline-block;
-        vertical-align: top;
-         height: 100px;
-        width: 100px;
+        overflow:hidden;    // 触发BFC
+       /*
+         display:table-cell; // 触发BFC
+         width: 9999px;
+        */
       }
-      .after-float{
-       }
-三、水平垂直居中布局
-   1、margin为负的方式（不足：内容区域大小固定）
+    .left{
+       background: red;
+       float:left;
+       width: 100px;
+     }
+
+     3、弹性盒子方式
       .container{
-         width: 500px;
-         height: 500px;
-         position: relative;
+        display: -webkit-flex;
+        display: flex;
       }
-     .content{
-        width: 200px;
-        height: 100px;
-        position: absolute;
-         left: 50%;
-        top: 50%;
-         margin-top: -50px;
-         margin-left: -100px;
-       }
-   &lt;div class=&quot;container&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-          &lt;p&gt;内容区内容区...&lt;/p&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
-   2、translate方式 （内容大小可变 、支持IE10）
-   .container{
-       width: 500px;
-       height: 500px;
-       position: relative;
+      .content{
+           -webkit-flex: 1;
+           flex: 1;
+      }
+      .left{
+           width: 100px;  
+          resize: horizontal;
+           overflow: auto;
      }
-     .content{
-       width: 200px;
-       height: 100px;
-       position: absolute;
-       left: 50%;
-       top: 50%;
-       transform: translate(-50%, -50%); /* 50%为自身尺寸的一半  IE10+*/
-     }
-   3、margin：auto方式
-     .container{
-         width: 500px;
-         height: 500px;
-         position: relative;
+ 二、列表布局
+     1、float方式(不足：1列表元素高度必须一致，需要清除浮动)
+         .box {
+            background: yellow;
+             margin: 1em;
+            float: left;
+            height: 100px;
+            width: 100px;
+         }
+        .after-float{
+            clear: both;
+            background: green;
+         }
+    &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;       
+    &lt;div class=&quot;after-float&quot;&gt;
+        afterfloat
+     &lt;/div&gt;
+     2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）
+      .box {
+         background: yellow;
+         margin: 1em;
+         display: inline-block;
+         vertical-align: top;
+          height: 100px;
+         width: 100px;
        }
-       .content{
+       .after-float{
+        }
+ 三、水平垂直居中布局
+    1、margin为负的方式（不足：内容区域大小固定）
+       .container{
+          width: 500px;
+          height: 500px;
+          position: relative;
+       }
+      .content{
          width: 200px;
          height: 100px;
          position: absolute;
-         left: 0;
-         top: 0;
-         right: 0;
-         bottom: 0;
-         margin: auto;   /*IE8+*/
-       }
-   4、display：table-cell方式
-        .container{
-          width: 500px;
-          height: 500px;
-          display:table-cell;
-          text-align:center;
-          vertical-align:middle;
+          left: 50%;
+         top: 50%;
+          margin-top: -50px;
+          margin-left: -100px;
         }
-        .content{
-          display: inline-block;
-          width: 200px;
-          height: 100px;
-        }
-   5flex布局方式
+    &lt;div class=&quot;container&quot;&gt;
+       &lt;div class=&quot;content&quot;&gt;
+           &lt;p&gt;内容区内容区...&lt;/p&gt;
+       &lt;/div&gt;
+   &lt;/div&gt;
+    2、translate方式 （内容大小可变 、支持IE10）
+    .container{
+        width: 500px;
+        height: 500px;
+        position: relative;
+      }
+      .content{
+        width: 200px;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); /* 50%为自身尺寸的一半  IE10+*/
+      }
+    3、margin：auto方式
       .container{
           width: 500px;
           height: 500px;
-
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          position: relative;
         }
         .content{
           width: 200px;
           height: 100px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;   /*IE8+*/
         }
-   四、css3中的弹性盒子布局
-       等高(宽)的栏目
-      独立的元素顺序
-      指定元素之间的关系
-      灵活的尺寸和对齐方式
+    4、display：table-cell方式
+         .container{
+           width: 500px;
+           height: 500px;
+           display:table-cell;
+           text-align:center;
+           vertical-align:middle;
+         }
+         .content{
+           display: inline-block;
+           width: 200px;
+           height: 100px;
+         }
+    5flex布局方式
+       .container{
+           width: 500px;
+           height: 500px;
 
-    五、多列布局
-    六 、查询兼容性：www.canuse.com
-        解决兼容性http://browserhacks.com/
+           display: flex;
+           align-items: center;
+           justify-content: center;
+         }
+         .content{
+           width: 200px;
+           height: 100px;
+         }
+    四、css3中的弹性盒子布局
+        等高(宽)的栏目
+       独立的元素顺序
+       指定元素之间的关系
+       灵活的尺寸和对齐方式
 
-             CSS Hack
-             条件注释
-             Javascript
+     五、多列布局
+     六 、查询兼容性：www.canuse.com
+         解决兼容性http://browserhacks.com/
+
+              CSS Hack
+              条件注释
+              Javascript
 </code></pre>
       
     </div>
