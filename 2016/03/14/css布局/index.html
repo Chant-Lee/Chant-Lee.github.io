@@ -6,46 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>css布局 | 向前奔跑的蚂蚁</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、自适应两栏布局
-1     1、margin方式
-2     .content{
-3        background: yellow;
-4        margin-left: 100px;
-5      }
-6    .left{
-7       background: red
-8       float:left;
-9       width: 100px;
-10      }">
+  <meta name="description" content="前言这是一篇讲解css进行布局的文章。作为一个前端开发者，对于css的布局一定要掌握，一下是我的学习心得。
+一、自适应两栏布局1、margin方式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css布局">
 <meta property="og:url" content="http://yoursite.com/2016/03/14/css布局/index.html">
 <meta property="og:site_name" content="向前奔跑的蚂蚁">
-<meta property="og:description" content="一、自适应两栏布局
-1     1、margin方式
-2     .content{
-3        background: yellow;
-4        margin-left: 100px;
-5      }
-6    .left{
-7       background: red
-8       float:left;
-9       width: 100px;
-10      }">
-<meta property="og:updated_time" content="2016-03-16T15:14:18.556Z">
+<meta property="og:description" content="前言这是一篇讲解css进行布局的文章。作为一个前端开发者，对于css的布局一定要掌握，一下是我的学习心得。
+一、自适应两栏布局1、margin方式">
+<meta property="og:updated_time" content="2016-03-17T05:34:23.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css布局">
-<meta name="twitter:description" content="一、自适应两栏布局
-1     1、margin方式
-2     .content{
-3        background: yellow;
-4        margin-left: 100px;
-5      }
-6    .left{
-7       background: red
-8       float:left;
-9       width: 100px;
-10      }">
+<meta name="twitter:description" content="前言这是一篇讲解css进行布局的文章。作为一个前端开发者，对于css的布局一定要掌握，一下是我的学习心得。
+一、自适应两栏布局1、margin方式">
   
     <link rel="alternative" href="/atom.xml" title="向前奔跑的蚂蚁" type="application/atom+xml">
   
@@ -260,181 +233,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code> 一、自适应两栏布局
-1     1、margin方式
-2     .content{
-3        background: yellow;
-4        margin-left: 100px;
-5      }
-6    .left{
-7       background: red
-8       float:left;
-9       width: 100px;
-10      }
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是一篇讲解css进行布局的文章。作为一个前端开发者，对于css的布局一定要掌握，一下是我的学习心得。</p>
+<h2 id="一、自适应两栏布局"><a href="#一、自适应两栏布局" class="headerlink" title="一、自适应两栏布局"></a>一、自适应两栏布局</h2><h3 id="1、margin方式"><a href="#1、margin方式" class="headerlink" title="1、margin方式"></a>1、margin方式</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.content&#123;</span><br><span class="line">     background: yellow;</span><br><span class="line">     margin-left: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.left&#123;</span><br><span class="line">      background: red</span><br><span class="line">      <span class="built_in">float</span>:left;</span><br><span class="line">      width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class=<span class="string">"container"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"left"</span>&gt;</span><br><span class="line">         &lt;p&gt;左边..&lt;/p&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">     &lt;div class=<span class="string">"content"</span>&gt;</span><br><span class="line">          &lt;p&gt;右边...&lt;/p&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2、触发BFC方式"><a href="#2、触发BFC方式" class="headerlink" title="2、触发BFC方式"></a>2、触发BFC方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> .content&#123;</span><br><span class="line">    background: yellow;</span><br><span class="line">    overflow:hidden;    // 触发BFC</span><br><span class="line">    /*</span><br><span class="line">    display:table-cell; // 触发BFC</span><br><span class="line">    width: 9999px;</span><br><span class="line">   */</span><br><span class="line">&#125;</span><br><span class="line">.left&#123;</span><br><span class="line">    background: red;</span><br><span class="line">    <span class="built_in">float</span>:left;</span><br><span class="line">    width: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3、弹性盒子方式"><a href="#3、弹性盒子方式" class="headerlink" title="3、弹性盒子方式"></a>3、弹性盒子方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    display: -webkit-flex;</span><br><span class="line">    display: flex;</span><br><span class="line">&#125;</span><br><span class="line">.content&#123;</span><br><span class="line">     -webkit-flex: 1;</span><br><span class="line">     flex: 1;</span><br><span class="line">&#125;</span><br><span class="line"> .left&#123;</span><br><span class="line">     width: 100px;</span><br><span class="line">     resize: horizontal;</span><br><span class="line">     overflow: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二、列表布局"><a href="#二、列表布局" class="headerlink" title="二、列表布局"></a>二、列表布局</h2><h3 id="1、float方式-不足：1列表元素高度必须一致，需要清除浮动-。"><a href="#1、float方式-不足：1列表元素高度必须一致，需要清除浮动-。" class="headerlink" title="1、float方式(不足：1列表元素高度必须一致，需要清除浮动)。"></a>1、float方式(不足：1列表元素高度必须一致，需要清除浮动)。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> .box &#123;</span><br><span class="line">      background: yellow;</span><br><span class="line">      margin: 1em;</span><br><span class="line">      <span class="built_in">float</span>: left;</span><br><span class="line">      height: 100px;</span><br><span class="line">      width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.after-float&#123;</span><br><span class="line">      clear: both;</span><br><span class="line">      background: green;</span><br><span class="line">&#125;</span><br><span class="line">  &lt;div class=<span class="string">"container"</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"after-float"</span>&gt;</span><br><span class="line">      afterfloat</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）"><a href="#2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）" class="headerlink" title="2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）"></a>2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    background: yellow;</span><br><span class="line">    margin: 1em;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    vertical-align: top;</span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 100px;</span><br><span class="line">&#125;</span><br><span class="line"> .after-float&#123;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三、水平垂直居中布局。"><a href="#三、水平垂直居中布局。" class="headerlink" title="三、水平垂直居中布局。"></a>三、水平垂直居中布局。</h2><h3 id="1、margin为负的方式（不足：内容区域大小固定）。"><a href="#1、margin为负的方式（不足：内容区域大小固定）。" class="headerlink" title="1、margin为负的方式（不足：内容区域大小固定）。"></a>1、margin为负的方式（不足：内容区域大小固定）。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">     width: 500px;</span><br><span class="line">     height: 500px;</span><br><span class="line">     position: relative;</span><br><span class="line"> &#125;</span><br><span class="line">.content&#123;</span><br><span class="line">     width: 200px;</span><br><span class="line">     height: 100px;</span><br><span class="line">     position: absolute;</span><br><span class="line">     left: 50%;</span><br><span class="line">     top: 50%;</span><br><span class="line">     margin-top: -50px;</span><br><span class="line">     margin-left: -100px;</span><br><span class="line">&#125;</span><br><span class="line">    &lt;div class=<span class="string">"container"</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">"content"</span>&gt;</span><br><span class="line">              &lt;p&gt;内容区内容区...&lt;/p&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2、translate方式-（内容大小可变-、支持IE10）"><a href="#2、translate方式-（内容大小可变-、支持IE10）" class="headerlink" title="2、translate方式 （内容大小可变 、支持IE10）"></a>2、translate方式 （内容大小可变 、支持IE10）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">     width: 500px;</span><br><span class="line">     height: 500px;</span><br><span class="line">     position: relative;</span><br><span class="line"> &#125;</span><br><span class="line"> .content&#123;</span><br><span class="line">      width: 200px;</span><br><span class="line">      height: 100px;</span><br><span class="line">      position: absolute;</span><br><span class="line">      left: 50%;</span><br><span class="line">      top: 50%;</span><br><span class="line">      transform: translate(-50%, -50%); /* 50%为自身尺寸的一半  IE10+*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3、margin：auto方式"><a href="#3、margin：auto方式" class="headerlink" title="3、margin：auto方式"></a>3、margin：auto方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> .container&#123;</span><br><span class="line">      width: 500px;</span><br><span class="line">      height: 500px;</span><br><span class="line">      position: relative;</span><br><span class="line"> &#125;</span><br><span class="line">.content&#123;</span><br><span class="line">      width: 200px;</span><br><span class="line">      height: 100px;</span><br><span class="line">      position: absolute;</span><br><span class="line">      left: 0;</span><br><span class="line">      top: 0;</span><br><span class="line">      right: 0;</span><br><span class="line">      bottom: 0;</span><br><span class="line">      margin: auto;   /*IE8+*/</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4、display：table-cell方式"><a href="#4、display：table-cell方式" class="headerlink" title="4、display：table-cell方式"></a>4、display：table-cell方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">      width: 500px;</span><br><span class="line">      height: 500px;</span><br><span class="line">      display:table-cell;</span><br><span class="line">      text-align:center;</span><br><span class="line">      vertical-align:middle;</span><br><span class="line">&#125;</span><br><span class="line">.content&#123;</span><br><span class="line">      display: inline-block;</span><br><span class="line">      width: 200px;</span><br><span class="line">      height: 100px;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5、flex布局方式"><a href="#5、flex布局方式" class="headerlink" title="5、flex布局方式"></a>5、flex布局方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;</span><br><span class="line"></span><br><span class="line">    display: flex;</span><br><span class="line">    align-items: center;</span><br><span class="line">   justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">.content&#123;</span><br><span class="line">     width: 200px;</span><br><span class="line">     height: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四、css3中的弹性盒子布局"><a href="#四、css3中的弹性盒子布局" class="headerlink" title="四、css3中的弹性盒子布局"></a>四、css3中的弹性盒子布局</h2><pre><code>等高(宽)的栏目
 
-11   &lt;div class=&quot;container&quot;&gt;
-12      &lt;div class=&quot;left&quot;&gt;
-13         &lt;p&gt;左边..&lt;/p&gt;
-14      &lt;/div&gt;
-15      &lt;div class=&quot;content&quot;&gt;
-16        &lt;p&gt;右边...&lt;/p&gt;
-17       &lt;/div&gt;
-18  &lt;/div&gt;
+独立的元素顺序
 
-     2、出发BFC方式
-1     .content{
-2        background: yellow;
-3        overflow:hidden;    // 触发BFC
-4       /*
-5         display:table-cell; // 触发BFC
-6         width: 9999px;
-7        */
-8      }
-9    .left{
-10       background: red;
-11       float:left;
-12       width: 100px;
-13     }
+指定元素之间的关系
 
-     3、弹性盒子方式
-1      .container{
-2        display: -webkit-flex;
-3        display: flex;
-4      }
-5      .content{
-6           -webkit-flex: 1;
-7           flex: 1;
-8      }
-9      .left{
-10           width: 100px;
-11          resize: horizontal;
-12           overflow: auto;
-13     }
- 二、列表布局
-     1、float方式(不足：1列表元素高度必须一致，需要清除浮动)
- 1        .box {
- 2           background: yellow;
- 3            margin: 1em;
- 4           float: left;
- 5           height: 100px;
- 6           width: 100px;
- 7        }
- 8       .after-float{
- 9           clear: both;
- 10           background: green;
- 11        }
- 12   &lt;div class=&quot;container&quot;&gt;
- 13   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
- 14   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
- 15   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
- 16   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
- 17   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
- 18   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
- 19   &lt;div class=&quot;box&quot;&gt;列表项&lt;/div&gt;
- 20   &lt;div class=&quot;after-float&quot;&gt;
- 21       afterfloat
- 22    &lt;/div&gt;
-     2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）
- 1     .box {
- 2        background: yellow;
- 3        margin: 1em;
- 4        display: inline-block;
- 5        vertical-align: top;
- 6         height: 100px;
- 7        width: 100px;
- 8      }
- 9      .after-float{
- 10       }
- 三、水平垂直居中布局
-    1、margin为负的方式（不足：内容区域大小固定）
- 1      .container{
- 2         width: 500px;
- 3         height: 500px;
- 4         position: relative;
- 5      }
- 6     .content{
- 7        width: 200px;
- 8        height: 100px;
- 9        position: absolute;
- 10         left: 50%;
- 11        top: 50%;
- 12         margin-top: -50px;
- 13         margin-left: -100px;
- 14       }
- 15   &lt;div class=&quot;container&quot;&gt;
- 16      &lt;div class=&quot;content&quot;&gt;
- 17          &lt;p&gt;内容区内容区...&lt;/p&gt;
- 18      &lt;/div&gt;
- 19  &lt;/div&gt;
-    2、translate方式 （内容大小可变 、支持IE10）
- 1   .container{
- 2       width: 500px;
- 3       height: 500px;
- 4       position: relative;
- 5     }
- 6     .content{
- 7       width: 200px;
- 8       height: 100px;
- 9       position: absolute;
- 10       left: 50%;
- 11       top: 50%;
- 12       transform: translate(-50%, -50%); /* 50%为自身尺寸的一半  IE10+*/
- 13     }
-    3、margin：auto方式
- 1     .container{
- 2         width: 500px;
- 3         height: 500px;
- 4         position: relative;
- 5       }
- 6       .content{
- 7         width: 200px;
- 8         height: 100px;
- 9         position: absolute;
- 10         left: 0;
- 11         top: 0;
- 12         right: 0;
- 13         bottom: 0;
- 14         margin: auto;   /*IE8+*/
- 15       }
-    4、display：table-cell方式
- 1        .container{
- 2          width: 500px;
- 3          height: 500px;
- 4          display:table-cell;
- 5          text-align:center;
- 6          vertical-align:middle;
- 7        }
- 8        .content{
- 9          display: inline-block;
- 10          width: 200px;
- 11          height: 100px;
- 12        }
-    5flex布局方式
- 1      .container{
- 2          width: 500px;
- 3          height: 500px;
+灵活的尺寸和对齐方式
+</code></pre><h2 id="五、多列布局"><a href="#五、多列布局" class="headerlink" title="五、多列布局"></a>五、多列布局</h2><h2 id="六-、查询兼容性：www-canuse-com"><a href="#六-、查询兼容性：www-canuse-com" class="headerlink" title="六 、查询兼容性：www.canuse.com"></a>六 、查询兼容性：www.canuse.com</h2><pre><code> 解决兼容性http://browserhacks.com/
 
- 4          display: flex;
- 5          align-items: center;
- 6          justify-content: center;
- 7        }
- 8        .content{
- 9          width: 200px;
- 10          height: 100px;
- 11        }
-    四、css3中的弹性盒子布局
-        等高(宽)的栏目
-       独立的元素顺序
-       指定元素之间的关系
-       灵活的尺寸和对齐方式
+ CSS Hack
 
-     五、多列布局
-     六 、查询兼容性：www.canuse.com
-         解决兼容性http://browserhacks.com/
+条件注释
 
-              CSS Hack
-              条件注释
-              Javascript
+Javascript
 </code></pre>
       
     </div>
