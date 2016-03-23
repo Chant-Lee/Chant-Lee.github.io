@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>正则表达式学习 | 向前奔跑的蚂蚁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#正则表达式   作为前端的初学者，正在研究正则表达式，写了一点demo和总结。也要感谢孙师兄的教导。   正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。   正则表达式的特点是：1. 灵活性、逻辑性和功能性非常的强；2. 可以迅速地用极简单的方式达到字符串的复杂控制。3. 对于刚接触的人来说，比较晦涩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式学习">
+<meta property="og:url" content="http://yoursite.com/2016/03/23/正则表达式学习/index.html">
+<meta property="og:site_name" content="向前奔跑的蚂蚁">
+<meta property="og:description" content="#正则表达式   作为前端的初学者，正在研究正则表达式，写了一点demo和总结。也要感谢孙师兄的教导。   正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。   正则表达式的特点是：1. 灵活性、逻辑性和功能性非常的强；2. 可以迅速地用极简单的方式达到字符串的复杂控制。3. 对于刚接触的人来说，比较晦涩">
+<meta property="og:updated_time" content="2016-03-23T15:02:40.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式学习">
+<meta name="twitter:description" content="#正则表达式   作为前端的初学者，正在研究正则表达式，写了一点demo和总结。也要感谢孙师兄的教导。   正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。   正则表达式的特点是：1. 灵活性、逻辑性和功能性非常的强；2. 可以迅速地用极简单的方式达到字符串的复杂控制。3. 对于刚接触的人来说，比较晦涩">
+  
+    <link rel="alternative" href="/atom.xml" title="向前奔跑的蚂蚁" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">李良权</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Mr-Prune/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">李良权</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="null" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">李良权</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Mr-Prune/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-正则表达式学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/23/正则表达式学习/" class="article-date">
+  	<time datetime="2016-03-23T13:56:24.000Z" itemprop="datePublished">2016-03-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      正则表达式学习
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#正则表达式<br>   作为前端的初学者，正在研究正则表达式，写了一点demo和总结。也要感谢孙师兄的教导。<br>   正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。<br>   正则表达式的特点是：1. 灵活性、逻辑性和功能性非常的强；2. 可以迅速地用极简单的方式达到字符串的复杂控制。3. 对于刚接触的人来说，比较晦涩难懂。</p>
+<p>##一下是自己写的一些demo</p>
+<h3 id="基本符号"><a href="#基本符号" class="headerlink" title="基本符号"></a>基本符号</h3><h4 id="demo1-“-”（或）、“-”、“-”"><a href="#demo1-“-”（或）、“-”、“-”" class="headerlink" title="demo1 “|”（或）、“^”、“$”"></a>demo1 “|”（或）、“^”、“$”</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   //<span class="string">'你'</span> 或 <span class="string">'好'</span></span><br><span class="line">  //^ 标记文字的开始 ::start</span><br><span class="line"> //$ 标记文字的结束 ::end</span><br><span class="line">var regex = /^你|好$/;</span><br><span class="line">console.log(regex.test(<span class="string">'一'</span>) === <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="demo2-数字单词、空白、反转"><a href="#demo2-数字单词、空白、反转" class="headerlink" title="demo2 数字单词、空白、反转"></a>demo2 数字单词、空白、反转</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    //0-9</span><br><span class="line">   var regex = /^\d\d\d\d$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'1024'</span>) === <span class="literal">true</span>);</span><br><span class="line">//不为0-9</span><br><span class="line">   var regex = /^\D\D\D\D$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'abcd'</span>) === <span class="literal">true</span>);</span><br><span class="line"> //A-Z a-z 0-9 _</span><br><span class="line">   var regex = /^\w\w\w\w$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'Aasdf0_'</span>) === <span class="literal">true</span>);</span><br><span class="line"> //除\n \r \u2028 \u2029的任意字符</span><br><span class="line">   var regex = /^.$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'a'</span>) === <span class="literal">true</span>);</span><br><span class="line">    //空白符号，比如空格，tab，换行，回行首</span><br><span class="line">   var regex = /^\s\s\s\s$/;</span><br><span class="line">   //字符串含义是空格，tab，换行 回行首</span><br><span class="line">   console.log(regex.test(<span class="string">' \t\n\r'</span>) === <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="demo3-区间"><a href="#demo3-区间" class="headerlink" title="demo3 区间"></a>demo3 区间</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   //a到z之间 0到9之间 中到丮之间 任意一个字符</span><br><span class="line">   var regex = /^[a-z0-9\u4e2d-\u4e2e]$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'a'</span>) === <span class="literal">true</span>);</span><br><span class="line">   console.log(regex.test(<span class="string">'0'</span>) === <span class="literal">true</span>);</span><br><span class="line">   console.log(regex.test(<span class="string">'中'</span>) === <span class="literal">true</span>);</span><br><span class="line">//方括号括起表示这个字符只要与方括号中任意一个字符匹配即成功</span><br><span class="line">   var regex = /^[你好]$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'你'</span>) === <span class="literal">true</span>);</span><br><span class="line">   console.log(regex.test(<span class="string">'好'</span>) === <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="demo4-重复"><a href="#demo4-重复" class="headerlink" title="demo4 重复"></a>demo4 重复</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    //<span class="string">'你'</span>可以重复1到3次</span><br><span class="line">   var regex = /^你&#123;1,3&#125;$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'你'</span>) === <span class="literal">true</span>);</span><br><span class="line">//<span class="string">'啦'</span>至少要重复2次</span><br><span class="line">   regex = /^啦&#123;2,&#125;$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'啦'</span>) === <span class="literal">false</span>);</span><br><span class="line"> //<span class="string">'啦'</span>可以重复1到多次</span><br><span class="line">   var regex = /^你好啦+$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'你好'</span>) === <span class="literal">false</span>);</span><br><span class="line">   console.log(regex.test(<span class="string">'你好啦'</span>) === <span class="literal">true</span>);</span><br><span class="line">//<span class="string">'啦'</span>可以重复0到多次</span><br><span class="line">   var regex = /^你好啦*$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'你好'</span>) === <span class="literal">true</span>);</span><br><span class="line"> //<span class="string">'啦'</span>可以重复0到1次</span><br><span class="line">   var regex = /^你好啦?$/;</span><br><span class="line">   console.log(regex.test(<span class="string">'你好'</span>) === <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="demo5-（）基本用途"><a href="#demo5-（）基本用途" class="headerlink" title="demo5 （）基本用途"></a>demo5 （）基本用途</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">   //<span class="string">'我是'</span>这个组不参与分组</span><br><span class="line">   var regex = /^(?:我是)([<span class="string">'"])人\1$/;</span><br><span class="line">   console.log(regex.test('</span>我是<span class="string">"人"</span><span class="string">') === true);</span><br><span class="line">var regex = /(一朵)(小花)/;</span><br><span class="line">   //执行一次匹配行为</span><br><span class="line">   var res = regex.exec('</span>啦一朵小花啦<span class="string">');</span><br><span class="line">   //完整被匹配到的字符串</span><br><span class="line">   console.log(res[0] === '</span>一朵小花<span class="string">');</span><br><span class="line">   //第一个分组</span><br><span class="line">   console.log(res[1] === '</span>一朵<span class="string">');</span><br><span class="line">   //第二个分组</span><br><span class="line">   console.log(res[2] === '</span>小花<span class="string">');</span><br><span class="line">//\1 引用了第一个匹配到的分组的字符串</span><br><span class="line">   var regex = /^(['</span><span class="string">"])一朵小花\1$/;</span><br><span class="line">   console.log(regex.test('"</span>一朵小花<span class="string">"') === true);</span></span><br></pre></td></tr></table></figure>
+<h4 id="demo6-flags（i-g-m）"><a href="#demo6-flags（i-g-m）" class="headerlink" title="demo6 flags（i g m）"></a>demo6 flags（i g m）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   //i模式不区分大小写</span><br><span class="line">   var regex = /^AbC$/i;</span><br><span class="line">   console.log(regex.test(<span class="string">'abc'</span>) === <span class="literal">true</span>);</span><br><span class="line">//g模式，会影响到部分api的行为</span><br><span class="line">   var str = <span class="string">'12342345'</span>;</span><br><span class="line">   //永远从字符串的开头开始匹配</span><br><span class="line">   var regex = /\d&#123;4&#125;/;</span><br><span class="line">   console.log(regex.exec(str)[0] === <span class="string">'1234'</span>);</span><br><span class="line">    //m模式 ^匹配到每行开头，$匹配到每行结尾</span><br><span class="line">   var regex = /^\d&#123;4&#125;$/mg;</span><br><span class="line">   var str = <span class="string">'1234\n2345\r3456'</span>;</span><br><span class="line">   console.log(regex.exec(str)[0] === <span class="string">'1234'</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="demo7-构造"><a href="#demo7-构造" class="headerlink" title="demo7 构造"></a>demo7 构造</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">#### demo6 flags（i g m）</span></span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">    var regex = /\.\d\./g;</span><br><span class="line">    var str = <span class="string">'123.4..5..6.'</span>;</span><br><span class="line">    console.log(regex.exec(str)[0] === <span class="string">'.4.'</span>);</span><br><span class="line">	//书写一个正则表达式匹配ip地址</span><br><span class="line">        /*</span><br><span class="line">        * (25[0-5]  250-255</span><br><span class="line">        * |2[0-4]\d  200-249</span><br><span class="line">        * [0-1]\d\d  000-199</span><br><span class="line">        * [1-9]?\d)  0-99</span><br><span class="line">        * */</span><br><span class="line">        var regex = /^(25[0-5]|2[0-4]\d|[0-1]\d\d|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d&#123;2&#125;|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d&#123;2&#125;|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d&#123;2&#125;|[1-9]?\d)$/;</span><br><span class="line"></span><br><span class="line">        var str = <span class="string">'192.0.1.1'</span>;</span><br><span class="line">        console.log(regex.test(str) === <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/14/css布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css布局</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="正则表达式学习" data-title="正则表达式学习" data-url="http://yoursite.com/2016/03/23/正则表达式学习/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 李良权
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
