@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>js简单的观察者模式 | 向前奔跑的蚂蚁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="js观察者模式观察者模式又叫发布订阅模式（Publish/on），它定义了一种一对多的关系，让多个观察者对象同时监听某一个主题对象，这个主题对象的状态发生变化时就会通知所有的观察者对象，使得它们能够自动更新自己。 
+利用原型的模式实现观察者。
+123456789101112131415161718192021222324252627282930313233343536373839404142434">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js简单的观察者模式">
+<meta property="og:url" content="http://yoursite.com/2016/03/27/js简单的观察者模式/index.html">
+<meta property="og:site_name" content="向前奔跑的蚂蚁">
+<meta property="og:description" content="js观察者模式观察者模式又叫发布订阅模式（Publish/on），它定义了一种一对多的关系，让多个观察者对象同时监听某一个主题对象，这个主题对象的状态发生变化时就会通知所有的观察者对象，使得它们能够自动更新自己。 
+利用原型的模式实现观察者。
+123456789101112131415161718192021222324252627282930313233343536373839404142434">
+<meta property="og:updated_time" content="2016-03-27T13:54:16.207Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js简单的观察者模式">
+<meta name="twitter:description" content="js观察者模式观察者模式又叫发布订阅模式（Publish/on），它定义了一种一对多的关系，让多个观察者对象同时监听某一个主题对象，这个主题对象的状态发生变化时就会通知所有的观察者对象，使得它们能够自动更新自己。 
+利用原型的模式实现观察者。
+123456789101112131415161718192021222324252627282930313233343536373839404142434">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">李良权</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">李良权</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">李良权</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-js简单的观察者模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/27/js简单的观察者模式/" class="article-date">
+  	<time datetime="2016-03-27T13:31:02.000Z" itemprop="datePublished">2016-03-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js简单的观察者模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="js观察者模式"><a href="#js观察者模式" class="headerlink" title="js观察者模式"></a>js观察者模式</h1><p>观察者模式又叫发布订阅模式（Publish/on），它定义了一种一对多的关系，<br>让多个观察者对象同时监听某一个主题对象，这个主题对象的状态发生变化时就会通知所有的观察者对象，<br>使得它们能够自动更新自己。 </p>
+<h2 id="利用原型的模式实现观察者。"><a href="#利用原型的模式实现观察者。" class="headerlink" title="利用原型的模式实现观察者。"></a>利用原型的模式实现观察者。</h2><!-- 查看更多 -->
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">//新建一个observer</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">Observer</span></span>() &#123;</span><br><span class="line">    this.fns = [];</span><br><span class="line">&#125;</span><br><span class="line">//原型方法</span><br><span class="line">Observer.prototype = &#123;</span><br><span class="line">//订阅方法</span><br><span class="line">    on: <span class="keyword">function</span> (fn) &#123;</span><br><span class="line">        this.fns.push(fn);</span><br><span class="line">    &#125;,</span><br><span class="line">	//取消订阅</span><br><span class="line">    fail: <span class="keyword">function</span> (fn) &#123;</span><br><span class="line">        this.fns = this.fns.filter(</span><br><span class="line">                        <span class="keyword">function</span> (el) &#123;</span><br><span class="line">                            <span class="keyword">if</span> (el !== fn) &#123;</span><br><span class="line">                                <span class="built_in">return</span> el;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    );</span><br><span class="line">    &#125;,</span><br><span class="line">    update: <span class="keyword">function</span> (o, thisObj) &#123;</span><br><span class="line">        var scope = thisObj || window;</span><br><span class="line">        this.fns.forEach(</span><br><span class="line">                        <span class="keyword">function</span> (el) &#123;</span><br><span class="line">						   console.log(el);</span><br><span class="line">                            el.call(scope, o);</span><br><span class="line">                        &#125;</span><br><span class="line">                    );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//测试</span><br><span class="line">var o = new Observer;</span><br><span class="line">var person1 = <span class="keyword">function</span> (message) &#123;</span><br><span class="line">    console.log(<span class="string">'person1: '</span> + message + <span class="string">', 赶紧收拾东西'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var person2 = <span class="keyword">function</span> (message) &#123;</span><br><span class="line">    console.log(<span class="string">'person2: '</span> + message + <span class="string">', 去买水'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">o.on(person1);</span><br><span class="line">o.on(person2);</span><br><span class="line"></span><br><span class="line">o.update(<span class="string">"女朋友回来了"</span>)</span><br><span class="line"></span><br><span class="line">//person1退订</span><br><span class="line">o.fail(person1);</span><br><span class="line">//再来发送</span><br><span class="line">o.update(<span class="string">"妈妈回来了！"</span>);</span><br></pre></td></tr></table></figure>
+<p>##其实还有很多方法，比如让多个对象都具有观察者发布订阅的功能，jQuery的on和off也行等等，目前功力还不高，希望能够相互学习，邮箱245922323@qq.com</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/23/正则表达式学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">正则表达式学习</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 李良权
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script>
+	var yiliaConfig = {
+		fancybox: undefined,
+		mathjax: undefined,
+		animate: undefined,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: undefined
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
