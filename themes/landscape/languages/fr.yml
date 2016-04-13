@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 categories: Catégories
 search: Rechercher
 tags: Mot-clés
@@ -17,3 +18,24 @@ powered_by: Propulsé by
 rss_feed: Flux RSS
 category: Catégorie
 tag: Mot-clé
+=======
+categories: Catégories
+search: Rechercher
+tags: Mot-clés
+tagcloud: Nuage de mot-clés
+tweets: Tweets
+prev: Précédent
+next: Suivant
+comment: Commentaires
+archive_a: Archives
+archive_b: "Archives: %s"
+page: Page %d
+recent_posts: Articles récents
+newer: Récent
+older: Ancien
+share: Partager
+powered_by: Propulsé by
+rss_feed: Flux RSS
+category: Catégorie
+tag: Mot-clé
+>>>>>>> d80a5030d103859e15463fd9069d65ca413375bf

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 categories: Kategorier
 search: Søk
 tags: Tags
@@ -16,4 +17,24 @@ share: Share
 powered_by: Powered by
 rss_feed: RSS Feed
 category: Category
+=======
+categories: Kategorier
+search: Søk
+tags: Tags
+tagcloud: Tag Cloud
+tweets: Tweets
+prev: Forrige
+next: Neste
+comment: Kommentarer
+archive_a: Arkiv
+archive_b: "Arkiv: %s"
+page: Side %d
+recent_posts: Siste innlegg
+newer: Newer
+older: Older
+share: Share
+powered_by: Powered by
+rss_feed: RSS Feed
+category: Category
+>>>>>>> d80a5030d103859e15463fd9069d65ca413375bf
 tag: Tag

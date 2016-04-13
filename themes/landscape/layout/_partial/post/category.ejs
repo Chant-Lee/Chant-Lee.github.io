@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% if (post.categories && post.categories.length){ %>
   <div class="article-category">
     <%- list_categories(post.categories, {
@@ -7,4 +8,15 @@
       separator: '►'
     }) %>
   </div>
+=======
+<% if (post.categories && post.categories.length){ %>
+  <div class="article-category">
+    <%- list_categories(post.categories, {
+      show_count: false,
+      class: 'article-category',
+      style: 'none',
+      separator: '►'
+    }) %>
+  </div>
+>>>>>>> d80a5030d103859e15463fd9069d65ca413375bf
 <% } %>
