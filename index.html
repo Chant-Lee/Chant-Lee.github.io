@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-vue-router" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/28/vue-router/" class="article-date">
+  <time datetime="2017-06-28T03:08:25.000Z" itemprop="datePublished">2017-06-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/28/vue-router/">vue-router</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-入门"><a href="#1-入门" class="headerlink" title="1.入门"></a>1.入门</h3><h4 id="1-1-安装使用"><a href="#1-1-安装使用" class="headerlink" title="1.1 安装使用"></a>1.1 安装使用</h4><p><code>$ npm install vue-router --save-dev</code></p>
+<h3 id="1-1-1-使用vue-cli搭建"><a href="#1-1-1-使用vue-cli搭建" class="headerlink" title="1.1.1 使用vue-cli搭建"></a>1.1.1 使用vue-cli搭建</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">|-- build                            // 项目构建(webpack)相关代码</div><div class="line">|   |-- build.js                     // 生产环境构建代码</div><div class="line">|   |-- check-version.js             // 检查node、npm等版本</div><div class="line">|   |-- dev-client.js                // 热重载相关</div><div class="line">|   |-- dev-server.js                // 构建本地服务器</div><div class="line">|   |-- utils.js                     // 构建工具相关</div><div class="line">|   |-- webpack.base.conf.js         // webpack基础配置</div><div class="line">|   |-- webpack.dev.conf.js          // webpack开发环境配置</div><div class="line">|   |-- webpack.prod.conf.js         // webpack生产环境配置</div><div class="line">|-- config                           // 项目开发环境配置</div><div class="line">|   |-- dev.env.js                   // 开发环境变量</div><div class="line">|   |-- index.js                     // 项目一些配置变量</div><div class="line">|   |-- prod.env.js                  // 生产环境变量</div><div class="line">|   |-- test.env.js                  // 测试环境变量</div><div class="line">|-- src                              // 源码目录</div><div class="line">|   |-- components                     // vue公共组件</div><div class="line">|   |-- store                          // vuex的状态管理</div><div class="line">|   |-- App.vue                        // 页面入口文件</div><div class="line">|   |-- main.js                        // 程序入口文件，加载各种公共组件</div><div class="line">|-- static                           // 静态文件，比如一些图片，json数据等</div><div class="line">|   |-- data                           // 群聊分析得到的数据用于数据可视化</div><div class="line">|-- .babelrc                         // ES6语法编译配置</div><div class="line">|-- .editorconfig                    // 定义代码格式</div><div class="line">|-- .gitignore                       // git上传需要忽略的文件格式</div><div class="line">|-- README.md                        // 项目说明</div><div class="line">|-- favicon.ico </div><div class="line">|-- index.html                       // 入口页面</div><div class="line">|-- package.json                     // 项目基本信息</div></pre></td></tr></table></figure>
+<h4 id="1-2-router-index-js"><a href="#1-2-router-index-js" class="headerlink" title="1.2 router/index.js"></a>1.2 router/index.js</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</div><div class="line">  <span class="attr">routes</span>: [              <span class="comment">//配置路由，这里是个数组</span></div><div class="line">    &#123;                    <span class="comment">//每一个链接都是一个对象</span></div><div class="line">      path: <span class="string">'/'</span>,         <span class="comment">//链接路径</span></div><div class="line">      name: <span class="string">'Hello'</span>,     <span class="comment">//路由名称，</span></div><div class="line">      component: Hello   <span class="comment">//对应的组件模板</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="1-3-router-link"><a href="#1-3-router-link" class="headerlink" title="1.3 router-link"></a>1.3 router-link</h4><ul>
+<li>相当于a标签</li>
+</ul>
+<p><code>&lt;router-link to=&quot;/&quot;&gt;[显示字段]&lt;/router-link&gt;</code></p>
+<p>to：填写router/index.js文件配置的path值</p>
+<h3 id="2-配置子路由"><a href="#2-配置子路由" class="headerlink" title="2.配置子路由"></a>2.配置子路由</h3><ul>
+<li><p>App.vue</p>
+</li>
+<li><p>components目录</p>
+</li>
+<li><p>router/index.js</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">children:[</div><div class="line">&#123;<span class="attr">path</span>:<span class="string">'/'</span>,<span class="attr">component</span>:xxx&#125;,</div><div class="line">&#123;<span class="attr">path</span>:<span class="string">'xx'</span>,<span class="attr">component</span>:xxx&#125;,</div><div class="line">]</div><div class="line"><span class="comment">//后面的子集不用加‘/’</span></div></pre></td></tr></table></figure>
+<h3 id="3-传递参数"><a href="#3-传递参数" class="headerlink" title="3.传递参数"></a>3.传递参数</h3><h4 id="3-1-name"><a href="#3-1-name" class="headerlink" title="3.1 name"></a>3.1 name</h4><ul>
+<li>有子路由的name是没用的</li>
+<li><code>&lt;p&gt;&lt;/p&gt;</code></li>
+</ul>
+<h4 id="3-2-to"><a href="#3-2-to" class="headerlink" title="3.2 :to"></a>3.2 :to</h4><p><strong><code>&lt;router-link</code></strong><code>:to=&quot;{name:xxx,params:{key:value}}&quot;</code><strong><code>&gt;</code></strong><code>valueString</code><strong><code>&lt;/router-link&gt;</code></strong></p>
+<p><code></code></p>
+<h3 id="4-单页面多路由区域"><a href="#4-单页面多路由区域" class="headerlink" title="4.单页面多路由区域"></a>4.单页面多路由区域</h3><ul>
+<li>一个页面有2个以上的&lt;router-view&gt;</li>
+<li>非常适合左右分栏，左边操作右边</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//App.vue</span></div><div class="line"> &lt;router-view &gt;&lt;/router-view&gt;</div><div class="line"> &lt;router-view name="left" style="float:left;width:50%;background-color:#ccc;height:300px;"&gt;&lt;/router-view&gt;</div><div class="line"> &lt;router-view name="right" style="float:right;width:50%;background-color:#c0c;height:300px;"&gt;&lt;/router-view&gt;</div><div class="line"> </div><div class="line">//router/index.js</div><div class="line">&#123;</div><div class="line">  path: '/',</div><div class="line">  name: 'Hello',</div><div class="line">  components: &#123;</div><div class="line">    default:Hello,</div><div class="line">    left:test01,</div><div class="line">    right:test02</div><div class="line">  &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h3 id="5-利用url传递参数"><a href="#5-利用url传递参数" class="headerlink" title="5.利用url传递参数"></a>5.利用url传递参数</h3><ul>
+<li>:号传递</li>
+<li>src/router/index.js 配置路由</li>
+<li>传递的数值在 </li>
+<li>可以使用正则规定传递的数组 path:’/params/:showId(\d+)/:name’</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/28/vue-router/" data-id="cj4gfc8h0000ay98zfpg7urnm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js纯函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/05/js纯函数/" class="article-date">
+  <time datetime="2017-02-05T13:31:08.000Z" itemprop="datePublished">2017-02-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/05/js纯函数/">js纯函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="js纯函数"><a href="#js纯函数" class="headerlink" title="js纯函数"></a>js纯函数</h2><h3 id="javascript纯函数"><a href="#javascript纯函数" class="headerlink" title="javascript纯函数"></a>javascript纯函数</h3><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。<br>  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。</p>
+<p>  纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/02/05/js纯函数/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/05/js纯函数/" data-id="cj4gfc8gw0007y98zg2jamxiz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js高阶函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/05/js高阶函数/" class="article-date">
+  <time datetime="2017-02-05T13:31:08.000Z" itemprop="datePublished">2017-02-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/05/js高阶函数/">javascript高阶函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="javascript高阶函数"><a href="#javascript高阶函数" class="headerlink" title="javascript高阶函数"></a>javascript高阶函数</h2><h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><p>这是一个有趣的东西，也说明了javascript对象的强大，我们要做的就是输出一个helloworld。</p>
+<p>高阶看上去就像是一种先进的编程技术的一个深奥术语【ps：我刚开始是这样子认为的。】</p>
+<p>然而，在javascript中，高阶函数只是将函数作为参数或返回值的函数。我们来看一个helloworld的简单例子。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/02/05/js高阶函数/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/05/js高阶函数/" data-id="cj4gfc8gy0009y98zufgp0grm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js中call、bind、apply" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/27/js中call、bind、apply/" class="article-date">
+  <time datetime="2016-06-27T14:31:08.000Z" itemprop="datePublished">2016-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/27/js中call、bind、apply/">js中call、call、apply</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="js中call-appply-bind理解"><a href="#js中call-appply-bind理解" class="headerlink" title="js中call appply bind理解"></a>js中call appply bind理解</h3><p>一般用来指定this的环境，在没有学之前，通常会有这些问题。<br>[参考网站： <a href="http://www.cnblogs.com/pssp/p/5215621.html" target="_blank" rel="external">http://www.cnblogs.com/pssp/p/5215621.html</a>]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a = &#123;</div><div class="line">    user:&quot;追梦子&quot;,</div><div class="line">    fn:function()&#123;</div><div class="line">        console.log(this.user);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var b = a.fn;</div><div class="line">b(); //undefined</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/27/js中call、bind、apply/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/27/js中call、bind、apply/" data-id="cj4gfc8gl0002y98z50nbpwfg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js中this碰到return时" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/27/js中this碰到return时/" class="article-date">
+  <time datetime="2016-06-27T14:31:08.000Z" itemprop="datePublished">2016-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/27/js中this碰到return时/">this碰到return时</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2-this碰到return时"><a href="#2-this碰到return时" class="headerlink" title="2 this碰到return时"></a>2 this碰到return时</h2><ul>
+<li>例子1</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fn()  </div><div class="line">&#123;  </div><div class="line">    this.user = &apos;追梦子&apos;;  </div><div class="line">    return &#123;&#125;;  </div><div class="line">&#125;</div><div class="line">var a = new fn;  </div><div class="line">console.log(a.user); //undefined</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/27/js中this碰到return时/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/27/js中this碰到return时/" data-id="cj4gfc8gt0005y98z7cq4rdov" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js中this的指向" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/27/js中this的指向/" class="article-date">
+  <time datetime="2016-05-27T13:31:08.000Z" itemprop="datePublished">2016-05-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/27/js中this的指向/">js中this的指向</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="js-this指向"><a href="#js-this指向" class="headerlink" title="js this指向"></a>js this指向</h2><p>【参考网址： <a href="http://www.cnblogs.com/pssp/p/5216085.html】" target="_blank" rel="external">http://www.cnblogs.com/pssp/p/5216085.html】</a></p>
+<p>首先必须要说的是，this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象（这句话有些问题，后面会解释为什么会有问题，虽然网上大部分的文章都是这样说的，虽然在很多情况下那样去理解不会出什么问题，但是实际上那样理解是不准确的，所以在你理解this的时候会有种琢磨不透的感觉），那么接下来我会深入的探讨这个问题。</p>
+<p>　　为什么要学习this？如果你学过面向对象编程，那你肯定知道干什么用的，如果你没有学过，那么暂时可以不用看这篇文章，当然如果你有兴趣也可以看看，毕竟这是js中必须要掌握的东西</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/27/js中this的指向/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/27/js中this的指向/" data-id="cj4gfc8gn0003y98z3pkbzuiv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js简单的观察者模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/27/js简单的观察者模式/" class="article-date">
+  <time datetime="2016-03-27T13:31:02.000Z" itemprop="datePublished">2016-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/27/js简单的观察者模式/">js简单的观察者模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="js观察者模式"><a href="#js观察者模式" class="headerlink" title="js观察者模式"></a>js观察者模式</h1><p>观察者模式又叫发布订阅模式（Publish/on），它定义了一种一对多的关系，<br>让多个观察者对象同时监听某一个主题对象，这个主题对象的状态发生变化时就会通知所有的观察者对象，<br>使得它们能够自动更新自己。 </p>
+<h2 id="利用原型的模式实现观察者。"><a href="#利用原型的模式实现观察者。" class="headerlink" title="利用原型的模式实现观察者。"></a>利用原型的模式实现观察者。</h2>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/27/js简单的观察者模式/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/27/js简单的观察者模式/" data-id="cj4gfc8gv0006y98zopi3m3f0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-正则表达式学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/23/正则表达式学习/" class="article-date">
+  <time datetime="2016-03-23T13:56:24.000Z" itemprop="datePublished">2016-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/23/正则表达式学习/">正则表达式学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>   作为前端的初学者，正在研究正则表达式，写了一点demo和总结。也要感谢孙师兄的教导。<br>   正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。<br>   正则表达式的特点是：1. 灵活性、逻辑性和功能性非常的强；2. 可以迅速地用极简单的方式达到字符串的复杂控制。3. 对于刚接触的人来说，比较晦涩难懂。</p>
+<h2 id="以下是自己写的一些demo"><a href="#以下是自己写的一些demo" class="headerlink" title="以下是自己写的一些demo"></a>以下是自己写的一些demo</h2><h3 id="基本符号"><a href="#基本符号" class="headerlink" title="基本符号"></a>基本符号</h3><h4 id="demo1-“-”（或）、“-”、“-”"><a href="#demo1-“-”（或）、“-”、“-”" class="headerlink" title="demo1 “|”（或）、“^”、“$”"></a>demo1 “|”（或）、“^”、“$”</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   //<span class="string">'你'</span> 或 <span class="string">'好'</span></div><div class="line">  //^ 标记文字的开始 ::start</div><div class="line"> //$ 标记文字的结束 ::end</div><div class="line">var regex = /^你|好$/;</div><div class="line">console.log(regex.test(<span class="string">'一'</span>) === <span class="literal">true</span>);</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/23/正则表达式学习/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/23/正则表达式学习/" data-id="cj4gfc8h4000fy98zmgtalwu9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/14/css布局/" class="article-date">
+  <time datetime="2016-03-14T14:03:08.000Z" itemprop="datePublished">2016-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/14/css布局/">css布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是一篇讲解css进行布局的文章。作为一个前端开发者，对于css的布局一定要掌握，一下是我的学习心得。</p>
+<h2 id="一、自适应两栏布局"><a href="#一、自适应两栏布局" class="headerlink" title="一、自适应两栏布局"></a>一、自适应两栏布局</h2><h3 id="1、margin方式"><a href="#1、margin方式" class="headerlink" title="1、margin方式"></a>1、margin方式</h3>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/14/css布局/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/14/css布局/" data-id="cj4gfc8gd0000y98z8xiky417" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-开通hexo的感想" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/13/开通hexo的感想/" class="article-date">
+  <time datetime="2016-03-13T00:58:26.000Z" itemprop="datePublished">2016-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/13/开通hexo的感想/">开通hexo的感想</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="开启独立博客之旅"><a href="#开启独立博客之旅" class="headerlink" title="开启独立博客之旅"></a>开启独立博客之旅</h1><p>感觉大四了才开属于自己的博客确实有那么一丢丢的晚，以前都是在新浪微博上书写自己的感想，吐槽的一点就是不鞥对代码进行编辑格式，每次复制代码上去就会出现格式问题。</p>
+<p>几个月之前就写了本地的博客，但是一直没有没有发送到github上面，后来也就是不了了之，加上去杭州实习了一段时间，连hexo的本地文件就弄丢了，最近因为一直在学东西所以就打算把博客还是搭建起来，写一写自己的感想，学习心得。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/13/开通hexo的感想/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/13/开通hexo的感想/" data-id="cj4gfc8h2000dy98z7gszn9az" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/28/vue-router/">vue-router</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/js纯函数/">js纯函数</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/js高阶函数/">javascript高阶函数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/27/js中call、bind、apply/">js中call、call、apply</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/27/js中this碰到return时/">this碰到return时</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

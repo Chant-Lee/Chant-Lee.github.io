@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css布局 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言这是一篇讲解css进行布局的文章。作为一个前端开发者，对于css的布局一定要掌握，一下是我的学习心得。 一、自适应两栏布局1、margin方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css布局">
+<meta property="og:url" content="http://yoursite.com/2016/03/14/css布局/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言这是一篇讲解css进行布局的文章。作为一个前端开发者，对于css的布局一定要掌握，一下是我的学习心得。 一、自适应两栏布局1、margin方式">
+<meta property="og:updated_time" content="2016-03-27T00:32:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css布局">
+<meta name="twitter:description" content="前言这是一篇讲解css进行布局的文章。作为一个前端开发者，对于css的布局一定要掌握，一下是我的学习心得。 一、自适应两栏布局1、margin方式">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/14/css布局/" class="article-date">
+  <time datetime="2016-03-14T14:03:08.000Z" itemprop="datePublished">2016-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css布局
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是一篇讲解css进行布局的文章。作为一个前端开发者，对于css的布局一定要掌握，一下是我的学习心得。</p>
+<h2 id="一、自适应两栏布局"><a href="#一、自适应两栏布局" class="headerlink" title="一、自适应两栏布局"></a>一、自适应两栏布局</h2><h3 id="1、margin方式"><a href="#1、margin方式" class="headerlink" title="1、margin方式"></a>1、margin方式</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">.content&#123;</div><div class="line">     background: yellow;</div><div class="line">     margin-left: 100px;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">      background: red</div><div class="line">      <span class="built_in">float</span>:left;</div><div class="line">      width: 100px;</div><div class="line">&#125;</div><div class="line">&lt;div class=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class=<span class="string">"left"</span>&gt;</div><div class="line">         &lt;p&gt;左边..&lt;/p&gt;</div><div class="line">     &lt;/div&gt;</div><div class="line">     &lt;div class=<span class="string">"content"</span>&gt;</div><div class="line">          &lt;p&gt;右边...&lt;/p&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="2、触发BFC方式"><a href="#2、触发BFC方式" class="headerlink" title="2、触发BFC方式"></a>2、触发BFC方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> .content&#123;</div><div class="line">    background: yellow;</div><div class="line">    overflow:hidden;    // 触发BFC</div><div class="line">    /*</div><div class="line">    display:table-cell; // 触发BFC</div><div class="line">    width: 9999px;</div><div class="line">   */</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">    background: red;</div><div class="line">    <span class="built_in">float</span>:left;</div><div class="line">    width: 100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3、弹性盒子方式"><a href="#3、弹性盒子方式" class="headerlink" title="3、弹性盒子方式"></a>3、弹性盒子方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    display: -webkit-flex;</div><div class="line">    display: flex;</div><div class="line">&#125;</div><div class="line">.content&#123;</div><div class="line">     -webkit-flex: 1;</div><div class="line">     flex: 1;</div><div class="line">&#125;</div><div class="line"> .left&#123;</div><div class="line">     width: 100px;</div><div class="line">     resize: horizontal;</div><div class="line">     overflow: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="二、列表布局"><a href="#二、列表布局" class="headerlink" title="二、列表布局"></a>二、列表布局</h2><h3 id="1、float方式-不足：1列表元素高度必须一致，需要清除浮动-。"><a href="#1、float方式-不足：1列表元素高度必须一致，需要清除浮动-。" class="headerlink" title="1、float方式(不足：1列表元素高度必须一致，需要清除浮动)。"></a>1、float方式(不足：1列表元素高度必须一致，需要清除浮动)。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"> .box &#123;</div><div class="line">      background: yellow;</div><div class="line">      margin: 1em;</div><div class="line">      <span class="built_in">float</span>: left;</div><div class="line">      height: 100px;</div><div class="line">      width: 100px;</div><div class="line">&#125;</div><div class="line">.after-float&#123;</div><div class="line">      clear: both;</div><div class="line">      background: green;</div><div class="line">&#125;</div><div class="line">  &lt;div class=<span class="string">"container"</span>&gt;</div><div class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"box"</span>&gt;列表项&lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"after-float"</span>&gt;</div><div class="line">      afterfloat</div><div class="line">  &lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）"><a href="#2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）" class="headerlink" title="2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）"></a>2、display：inline-block方式（优点：列表元素高度可以不一致，不需要清除浮动。不足：如果html源码中元素之间有空格，那么列与列之间会产生空隙【加上margin0可以清除】）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    background: yellow;</div><div class="line">    margin: 1em;</div><div class="line">    display: inline-block;</div><div class="line">    vertical-align: top;</div><div class="line">    height: 100px;</div><div class="line">    width: 100px;</div><div class="line">&#125;</div><div class="line"> .after-float&#123;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h2 id="三、水平垂直居中布局。"><a href="#三、水平垂直居中布局。" class="headerlink" title="三、水平垂直居中布局。"></a>三、水平垂直居中布局。</h2><h3 id="1、margin为负的方式（不足：内容区域大小固定）。"><a href="#1、margin为负的方式（不足：内容区域大小固定）。" class="headerlink" title="1、margin为负的方式（不足：内容区域大小固定）。"></a>1、margin为负的方式（不足：内容区域大小固定）。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">     width: 500px;</div><div class="line">     height: 500px;</div><div class="line">     position: relative;</div><div class="line"> &#125;</div><div class="line">.content&#123;</div><div class="line">     width: 200px;</div><div class="line">     height: 100px;</div><div class="line">     position: absolute;</div><div class="line">     left: 50%;</div><div class="line">     top: 50%;</div><div class="line">     margin-top: -50px;</div><div class="line">     margin-left: -100px;</div><div class="line">&#125;</div><div class="line">    &lt;div class=<span class="string">"container"</span>&gt;</div><div class="line">        &lt;div class=<span class="string">"content"</span>&gt;</div><div class="line">              &lt;p&gt;内容区内容区...&lt;/p&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="2、translate方式-（内容大小可变-、支持IE10）"><a href="#2、translate方式-（内容大小可变-、支持IE10）" class="headerlink" title="2、translate方式 （内容大小可变 、支持IE10）"></a>2、translate方式 （内容大小可变 、支持IE10）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">     width: 500px;</div><div class="line">     height: 500px;</div><div class="line">     position: relative;</div><div class="line"> &#125;</div><div class="line"> .content&#123;</div><div class="line">      width: 200px;</div><div class="line">      height: 100px;</div><div class="line">      position: absolute;</div><div class="line">      left: 50%;</div><div class="line">      top: 50%;</div><div class="line">      transform: translate(-50%, -50%); /* 50%为自身尺寸的一半  IE10+*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3、margin：auto方式"><a href="#3、margin：auto方式" class="headerlink" title="3、margin：auto方式"></a>3、margin：auto方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> .container&#123;</div><div class="line">      width: 500px;</div><div class="line">      height: 500px;</div><div class="line">      position: relative;</div><div class="line"> &#125;</div><div class="line">.content&#123;</div><div class="line">      width: 200px;</div><div class="line">      height: 100px;</div><div class="line">      position: absolute;</div><div class="line">      left: 0;</div><div class="line">      top: 0;</div><div class="line">      right: 0;</div><div class="line">      bottom: 0;</div><div class="line">      margin: auto;   /*IE8+*/</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h3 id="4、display：table-cell方式"><a href="#4、display：table-cell方式" class="headerlink" title="4、display：table-cell方式"></a>4、display：table-cell方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">      width: 500px;</div><div class="line">      height: 500px;</div><div class="line">      display:table-cell;</div><div class="line">      text-align:center;</div><div class="line">      vertical-align:middle;</div><div class="line">&#125;</div><div class="line">.content&#123;</div><div class="line">      display: inline-block;</div><div class="line">      width: 200px;</div><div class="line">      height: 100px;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h3 id="5、flex布局方式"><a href="#5、flex布局方式" class="headerlink" title="5、flex布局方式"></a>5、flex布局方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    width: 500px;</div><div class="line">    height: 500px;</div><div class="line"></div><div class="line">    display: flex;</div><div class="line">    align-items: center;</div><div class="line">   justify-content: center;</div><div class="line">&#125;</div><div class="line">.content&#123;</div><div class="line">     width: 200px;</div><div class="line">     height: 100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="四、css3中的弹性盒子布局"><a href="#四、css3中的弹性盒子布局" class="headerlink" title="四、css3中的弹性盒子布局"></a>四、css3中的弹性盒子布局</h2><pre><code>等高(宽)的栏目
+
+独立的元素顺序
+
+指定元素之间的关系
+
+灵活的尺寸和对齐方式
+</code></pre><h2 id="五、多列布局"><a href="#五、多列布局" class="headerlink" title="五、多列布局"></a>五、多列布局</h2><h2 id="六-、查询兼容性：www-canuse-com"><a href="#六-、查询兼容性：www-canuse-com" class="headerlink" title="六 、查询兼容性：www.canuse.com"></a>六 、查询兼容性：www.canuse.com</h2><pre><code> 解决兼容性http://browserhacks.com/
+
+ CSS Hack
+
+条件注释
+
+Javascript
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/14/css布局/" data-id="cj4gfc8gd0000y98z8xiky417" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/23/正则表达式学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          正则表达式学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/13/开通hexo的感想/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">开通hexo的感想</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/28/vue-router/">vue-router</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/js纯函数/">js纯函数</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/js高阶函数/">javascript高阶函数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/27/js中call、bind、apply/">js中call、call、apply</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/27/js中this碰到return时/">this碰到return时</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

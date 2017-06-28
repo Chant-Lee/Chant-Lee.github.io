@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js纯函数 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="js纯函数javascript纯函数定义  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。   纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。">
+<meta name="keywords" content="技术,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js纯函数">
+<meta property="og:url" content="http://yoursite.com/2017/02/05/js纯函数/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="js纯函数javascript纯函数定义  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。   纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。">
+<meta property="og:updated_time" content="2017-02-09T13:16:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js纯函数">
+<meta name="twitter:description" content="js纯函数javascript纯函数定义  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。   纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js纯函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/05/js纯函数/" class="article-date">
+  <time datetime="2017-02-05T13:31:08.000Z" itemprop="datePublished">2017-02-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js纯函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="js纯函数"><a href="#js纯函数" class="headerlink" title="js纯函数"></a>js纯函数</h2><h3 id="javascript纯函数"><a href="#javascript纯函数" class="headerlink" title="javascript纯函数"></a>javascript纯函数</h3><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。<br>  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。</p>
+<p>  纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。</p>
+<a id="more"></a>
+<p>   var values = { a: 1 };<br>    function impureFunction ( obj ) {<br>      var b = 1;</p>
+<pre><code>  obj = obj * b + 2;
+
+  return obj.a;
+}
+
+var c = impureFunction( values );
+</code></pre><p>// 现在 <code>values.a</code> 变成 3,  impureFunction 改变了它。<br>在上面的代码中，我们改变了参数对象中的一个属性。由于我们定义的函数改变的对象在我们的函数作用域之外，导致这个函数成为“不纯”的函数。</p>
+<pre><code>var values = { a: 1 };
+function impureFunction ( obj ) {
+  var b = 1;
+
+  obj = obj * b + 2;
+
+  return obj;
+}
+
+var c = impureFunction( values );
+</code></pre><p>上面的代码，我们只计算了作用域内的局部变量，没有任何作用域外部的变量被改变，因此这个函数是“纯函数”。</p>
+<p>／／纯函数是这样一种函数，即相同的输出，<br>    永远会得到相同的输出，而且没有任何可观察的副作用<br>    var xs  =   [1,2,3,4,5];<br>        //  纯函数<br>        xs.slice(0,3);<br>        //=&gt; [1,2,3]<br>        xs.slice(0,3);<br>        //=&gt; [1,2,3]<br>        xs.slice(0,3);<br>        //=&gt; [1,2,3]</p>
+<pre><code>    //  非纯函数
+    xs.splice(0,3);
+    //=&gt; [1,2,3]
+    xs.splice(0,3);
+    //=&gt; [4,5]
+    xs.splice(0,3);
+    //=&gt; []
+
+
+ //将splice转换成纯函数
+ // 1 自己
+var oldSplice=Array.prototype.splice;
+Array.prototype.splice = function(){
+    var newItem=JSON.parse(JSON.stringify(this));
+    var obj=Object.prototype.toString;
+    if(obj.call(arguments[0])===&quot;[object Boolean]&quot;){
+        console.log(arguments.length);
+        if(arguments.length&gt;3){
+            console.log(111);
+           return oldSplice.apply(this,Array.prototype.slice.call(arguments).slice(1));
+        }else{
+            console.log(22222);
+           return  newItem.slice(arguments[1],arguments[2])
+
+        }
+    }else{
+       return oldSplice.apply(this,arguments);
+    }
+}
+
+//参考答案
+   Array.prototype.splice = (function () {
+    var oldfn = Array.prototype.splice;
+    return function () {
+        var flag=Object.prototype.toString.call(arguments[0]) === &apos;[object Array]&apos;,
+            context=flag?this.concat():this,
+            arg=flag?arguments[0]:arguments;
+        return oldfn.apply(context, arg);
+    }
+})();
+
+
+var a=[1,2,3,4,5];var c=a.splice(0,3);console.log(a,c);
+--&gt;[4, 5] [1, 2, 3]
+
+var a=[1,2,3,4,5];var c=a.splice([0,3]);console.log(a,c);
+--&gt;[1, 2, 3, 4, 5] [1, 2, 3]
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">答案一</div><div class="line"></div><div class="line">var spliceFn = Array.prototype.splice;</div><div class="line">Array.prototype.splice = function()&#123;</div><div class="line">    var isWritable = arguments[0] === false ? false : true;</div><div class="line">    var self = isWritable ? this : this.slice(0);</div><div class="line">    var n = isWritable ? 0 : 1;</div><div class="line">    var args = Array.prototype.slice.call(arguments, n);</div><div class="line">    </div><div class="line">    答案二</div><div class="line"></div><div class="line">     Array.prototype.splice = (function () &#123;</div><div class="line">        var nativeSplice = Array.prototype.splice;</div><div class="line">        return function () &#123;</div><div class="line">            if (typeof arguments[0] === &apos;boolean&apos;) &#123;</div><div class="line">                var orgs = [].slice.call(arguments, 1);</div><div class="line">                var newArr = this.concat();</div><div class="line">                return nativeSplice.apply(newArr, orgs);</div><div class="line">            &#125; else &#123;</div><div class="line">                return nativeSplice.apply(this, arguments);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)()</div></pre></td></tr></table></figure>
+<h3 id="使用纯函数的好处"><a href="#使用纯函数的好处" class="headerlink" title="使用纯函数的好处"></a>使用纯函数的好处</h3><ul>
+<li>首先它没有副作用，纯函数是不会修改作用域之外的状态，就意味着代码变得足够的简单和清晰；当你在调用一个纯函数的时候，你只要关注它的返回值，不用担心因为其他地方的问题影响里面出问题。</li>
+<li>纯函数是健壮的，改变执行次序不会对系统造成影响，因此纯函数的操作可以并行执行。</li>
+<li>纯函数非常容易进行单元测试，因为不需要考虑上下文环境，只需要考虑输入和输出。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/05/js纯函数/" data-id="cj4gfc8gw0007y98zg2jamxiz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/28/vue-router/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue-router
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/05/js高阶函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javascript高阶函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/28/vue-router/">vue-router</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/js纯函数/">js纯函数</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/js高阶函数/">javascript高阶函数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/27/js中call、bind、apply/">js中call、call、apply</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/27/js中this碰到return时/">this碰到return时</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

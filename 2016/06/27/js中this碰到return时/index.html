@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>this碰到return时 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2 this碰到return时 例子1  1234567function fn()  &amp;#123;      this.user = &amp;apos;追梦子&amp;apos;;      return &amp;#123;&amp;#125;;  &amp;#125;var a = new fn;  console.log(a.user); //undefined">
+<meta name="keywords" content="技术,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this碰到return时">
+<meta property="og:url" content="http://yoursite.com/2016/06/27/js中this碰到return时/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="2 this碰到return时 例子1  1234567function fn()  &amp;#123;      this.user = &amp;apos;追梦子&amp;apos;;      return &amp;#123;&amp;#125;;  &amp;#125;var a = new fn;  console.log(a.user); //undefined">
+<meta property="og:updated_time" content="2017-02-05T14:29:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="this碰到return时">
+<meta name="twitter:description" content="2 this碰到return时 例子1  1234567function fn()  &amp;#123;      this.user = &amp;apos;追梦子&amp;apos;;      return &amp;#123;&amp;#125;;  &amp;#125;var a = new fn;  console.log(a.user); //undefined">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js中this碰到return时" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/27/js中this碰到return时/" class="article-date">
+  <time datetime="2016-06-27T14:31:08.000Z" itemprop="datePublished">2016-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      this碰到return时
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2-this碰到return时"><a href="#2-this碰到return时" class="headerlink" title="2 this碰到return时"></a>2 this碰到return时</h2><ul>
+<li>例子1</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fn()  </div><div class="line">&#123;  </div><div class="line">    this.user = &apos;追梦子&apos;;  </div><div class="line">    return &#123;&#125;;  </div><div class="line">&#125;</div><div class="line">var a = new fn;  </div><div class="line">console.log(a.user); //undefined</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>例子2</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fn()  </div><div class="line">&#123;  </div><div class="line">    this.user = &apos;追梦子&apos;;  </div><div class="line">    return function()&#123;&#125;;</div><div class="line">&#125;</div><div class="line">var a = new fn;  </div><div class="line">console.log(a.user); //undefined</div></pre></td></tr></table></figure>
+<ul>
+<li>例子3</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function fn()  </div><div class="line">&#123;  </div><div class="line">    this.user = &apos;追梦子&apos;;  </div><div class="line">    return 1;</div><div class="line">&#125;</div><div class="line">var a = new fn;</div><div class="line">console.log(a.user); //追梦子</div><div class="line"></div><div class="line">function fn()  </div><div class="line">&#123;  </div><div class="line">    this.user = &apos;追梦子&apos;;  </div><div class="line">    return undefined;</div><div class="line">&#125;</div><div class="line">var a = new fn;  </div><div class="line">console.log(a.user); //追梦子</div></pre></td></tr></table></figure>
+<p>什么意思呢？</p>
+<h3 id="如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例。"><a href="#如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例。" class="headerlink" title="如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例。"></a>如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fn()  </div><div class="line">&#123;  </div><div class="line">    this.user = &apos;追梦子&apos;;  </div><div class="line">    return undefined;</div><div class="line">&#125;</div><div class="line">var a = new fn;  </div><div class="line">console.log(a); //fn &#123;user: &quot;追梦子&quot;&#125;</div></pre></td></tr></table></figure>
+<h3 id="还有一点就是虽然null也是对象，但是在这里this还是指向那个函数的实例，因为null比较特殊。"><a href="#还有一点就是虽然null也是对象，但是在这里this还是指向那个函数的实例，因为null比较特殊。" class="headerlink" title="还有一点就是虽然null也是对象，但是在这里this还是指向那个函数的实例，因为null比较特殊。"></a>还有一点就是虽然null也是对象，但是在这里this还是指向那个函数的实例，因为null比较特殊。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fn()  </div><div class="line">&#123;  </div><div class="line">    this.user = &apos;追梦子&apos;;  </div><div class="line">    return null;</div><div class="line">&#125;</div><div class="line">var a = new fn;  </div><div class="line">console.log(a.user); //追梦子</div></pre></td></tr></table></figure>
+<h2 id="知识点补充："><a href="#知识点补充：" class="headerlink" title="知识点补充："></a>知识点补充：</h2><p>　　1.在严格版中的默认的this不再是window，而是undefined。</p>
+<p>　　2.new操作符会改变函数this的指向问题，虽然我们上面讲解过了，但是并没有深入的讨论这个问题，网上也很少说，所以在这里有必要说一下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function fn()&#123;</div><div class="line">    this.num = 1;</div><div class="line">&#125;</div><div class="line">var a = new fn();</div><div class="line">console.log(a.num); //1</div></pre></td></tr></table></figure>
+<h3 id="为什么this会指向a？首先new关键字会创建一个空的对象，然后会自动调用一个函数apply方法，将this指向这个空对象，这样的话函数内部的this就会被这个空的对象替代。"><a href="#为什么this会指向a？首先new关键字会创建一个空的对象，然后会自动调用一个函数apply方法，将this指向这个空对象，这样的话函数内部的this就会被这个空的对象替代。" class="headerlink" title="为什么this会指向a？首先new关键字会创建一个空的对象，然后会自动调用一个函数apply方法，将this指向这个空对象，这样的话函数内部的this就会被这个空的对象替代。"></a>为什么this会指向a？首先new关键字会创建一个空的对象，然后会自动调用一个函数apply方法，将this指向这个空对象，这样的话函数内部的this就会被这个空的对象替代。</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/27/js中this碰到return时/" data-id="cj4gfc8gt0005y98z7cq4rdov" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/27/js中call、bind、apply/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          js中call、call、apply
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/27/js中this的指向/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js中this的指向</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/28/vue-router/">vue-router</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/js纯函数/">js纯函数</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/js高阶函数/">javascript高阶函数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/27/js中call、bind、apply/">js中call、call、apply</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/27/js中this碰到return时/">this碰到return时</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
