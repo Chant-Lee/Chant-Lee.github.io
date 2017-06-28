@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>vue-router | Hexo</title>
+  <title>vue-router | 向前奔跑的蚂蚁</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.入门1.1 安装使用$ npm install vue-router --save-dev 1.1.1 使用vue-cli搭建12345678910111213141516171819202122232425262728|-- build                            // 项目构建(webpack)相关代码|   |-- build.js">
+  <meta name="description" content="1.入门1.1 安装使用$ npm install vue-router --save-dev 1.1.1 使用vue-cli搭建">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-router">
 <meta property="og:url" content="http://yoursite.com/2017/06/28/vue-router/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.入门1.1 安装使用$ npm install vue-router --save-dev 1.1.1 使用vue-cli搭建12345678910111213141516171819202122232425262728|-- build                            // 项目构建(webpack)相关代码|   |-- build.js">
-<meta property="og:updated_time" content="2017-06-28T03:11:05.000Z">
+<meta property="og:site_name" content="向前奔跑的蚂蚁">
+<meta property="og:description" content="1.入门1.1 安装使用$ npm install vue-router --save-dev 1.1.1 使用vue-cli搭建">
+<meta property="og:updated_time" content="2017-06-28T03:20:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-router">
-<meta name="twitter:description" content="1.入门1.1 安装使用$ npm install vue-router --save-dev 1.1.1 使用vue-cli搭建12345678910111213141516171819202122232425262728|-- build                            // 项目构建(webpack)相关代码|   |-- build.js">
+<meta name="twitter:description" content="1.入门1.1 安装使用$ npm install vue-router --save-dev 1.1.1 使用vue-cli搭建">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="向前奔跑的蚂蚁" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -37,7 +37,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">向前奔跑的蚂蚁</a>
       </h1>
       
     </div>
@@ -86,7 +86,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-入门"><a href="#1-入门" class="headerlink" title="1.入门"></a>1.入门</h3><h4 id="1-1-安装使用"><a href="#1-1-安装使用" class="headerlink" title="1.1 安装使用"></a>1.1 安装使用</h4><p><code>$ npm install vue-router --save-dev</code></p>
-<h3 id="1-1-1-使用vue-cli搭建"><a href="#1-1-1-使用vue-cli搭建" class="headerlink" title="1.1.1 使用vue-cli搭建"></a>1.1.1 使用vue-cli搭建</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">|-- build                            // 项目构建(webpack)相关代码</div><div class="line">|   |-- build.js                     // 生产环境构建代码</div><div class="line">|   |-- check-version.js             // 检查node、npm等版本</div><div class="line">|   |-- dev-client.js                // 热重载相关</div><div class="line">|   |-- dev-server.js                // 构建本地服务器</div><div class="line">|   |-- utils.js                     // 构建工具相关</div><div class="line">|   |-- webpack.base.conf.js         // webpack基础配置</div><div class="line">|   |-- webpack.dev.conf.js          // webpack开发环境配置</div><div class="line">|   |-- webpack.prod.conf.js         // webpack生产环境配置</div><div class="line">|-- config                           // 项目开发环境配置</div><div class="line">|   |-- dev.env.js                   // 开发环境变量</div><div class="line">|   |-- index.js                     // 项目一些配置变量</div><div class="line">|   |-- prod.env.js                  // 生产环境变量</div><div class="line">|   |-- test.env.js                  // 测试环境变量</div><div class="line">|-- src                              // 源码目录</div><div class="line">|   |-- components                     // vue公共组件</div><div class="line">|   |-- store                          // vuex的状态管理</div><div class="line">|   |-- App.vue                        // 页面入口文件</div><div class="line">|   |-- main.js                        // 程序入口文件，加载各种公共组件</div><div class="line">|-- static                           // 静态文件，比如一些图片，json数据等</div><div class="line">|   |-- data                           // 群聊分析得到的数据用于数据可视化</div><div class="line">|-- .babelrc                         // ES6语法编译配置</div><div class="line">|-- .editorconfig                    // 定义代码格式</div><div class="line">|-- .gitignore                       // git上传需要忽略的文件格式</div><div class="line">|-- README.md                        // 项目说明</div><div class="line">|-- favicon.ico </div><div class="line">|-- index.html                       // 入口页面</div><div class="line">|-- package.json                     // 项目基本信息</div></pre></td></tr></table></figure>
+<h3 id="1-1-1-使用vue-cli搭建"><a href="#1-1-1-使用vue-cli搭建" class="headerlink" title="1.1.1 使用vue-cli搭建"></a>1.1.1 使用vue-cli搭建</h3><a id="more"></a>
+<p>详情请百度vue-cli搭建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">|-- build                            // 项目构建(webpack)相关代码</div><div class="line">|   |-- build.js                     // 生产环境构建代码</div><div class="line">|   |-- check-version.js             // 检查node、npm等版本</div><div class="line">|   |-- dev-client.js                // 热重载相关</div><div class="line">|   |-- dev-server.js                // 构建本地服务器</div><div class="line">|   |-- utils.js                     // 构建工具相关</div><div class="line">|   |-- webpack.base.conf.js         // webpack基础配置</div><div class="line">|   |-- webpack.dev.conf.js          // webpack开发环境配置</div><div class="line">|   |-- webpack.prod.conf.js         // webpack生产环境配置</div><div class="line">|-- config                           // 项目开发环境配置</div><div class="line">|   |-- dev.env.js                   // 开发环境变量</div><div class="line">|   |-- index.js                     // 项目一些配置变量</div><div class="line">|   |-- prod.env.js                  // 生产环境变量</div><div class="line">|   |-- test.env.js                  // 测试环境变量</div><div class="line">|-- src                              // 源码目录</div><div class="line">|   |-- components                     // vue公共组件</div><div class="line">|   |-- store                          // vuex的状态管理</div><div class="line">|   |-- App.vue                        // 页面入口文件</div><div class="line">|   |-- main.js                        // 程序入口文件，加载各种公共组件</div><div class="line">|-- static                           // 静态文件，比如一些图片，json数据等</div><div class="line">|   |-- data                           // 群聊分析得到的数据用于数据可视化</div><div class="line">|-- .babelrc                         // ES6语法编译配置</div><div class="line">|-- .editorconfig                    // 定义代码格式</div><div class="line">|-- .gitignore                       // git上传需要忽略的文件格式</div><div class="line">|-- README.md                        // 项目说明</div><div class="line">|-- favicon.ico </div><div class="line">|-- index.html                       // 入口页面</div><div class="line">|-- package.json                     // 项目基本信息</div></pre></td></tr></table></figure>
 <h4 id="1-2-router-index-js"><a href="#1-2-router-index-js" class="headerlink" title="1.2 router/index.js"></a>1.2 router/index.js</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</div><div class="line">  <span class="attr">routes</span>: [              <span class="comment">//配置路由，这里是个数组</span></div><div class="line">    &#123;                    <span class="comment">//每一个链接都是一个对象</span></div><div class="line">      path: <span class="string">'/'</span>,         <span class="comment">//链接路径</span></div><div class="line">      name: <span class="string">'Hello'</span>,     <span class="comment">//路由名称，</span></div><div class="line">      component: Hello   <span class="comment">//对应的组件模板</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h4 id="1-3-router-link"><a href="#1-3-router-link" class="headerlink" title="1.3 router-link"></a>1.3 router-link</h4><ul>
 <li>相当于a标签</li>
@@ -123,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/28/vue-router/" data-id="cj4gfc8h0000ay98zfpg7urnm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/28/vue-router/" data-id="cj4gfocqr000alg8z6ong855c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +219,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
+      &copy; 2017 李良权<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>向前奔跑的蚂蚁</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="向前奔跑的蚂蚁">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="向前奔跑的蚂蚁">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="向前奔跑的蚂蚁">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="向前奔跑的蚂蚁" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,7 +33,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">向前奔跑的蚂蚁</a>
       </h1>
       
     </div>
@@ -84,44 +84,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-入门"><a href="#1-入门" class="headerlink" title="1.入门"></a>1.入门</h3><h4 id="1-1-安装使用"><a href="#1-1-安装使用" class="headerlink" title="1.1 安装使用"></a>1.1 安装使用</h4><p><code>$ npm install vue-router --save-dev</code></p>
-<h3 id="1-1-1-使用vue-cli搭建"><a href="#1-1-1-使用vue-cli搭建" class="headerlink" title="1.1.1 使用vue-cli搭建"></a>1.1.1 使用vue-cli搭建</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">|-- build                            // 项目构建(webpack)相关代码</div><div class="line">|   |-- build.js                     // 生产环境构建代码</div><div class="line">|   |-- check-version.js             // 检查node、npm等版本</div><div class="line">|   |-- dev-client.js                // 热重载相关</div><div class="line">|   |-- dev-server.js                // 构建本地服务器</div><div class="line">|   |-- utils.js                     // 构建工具相关</div><div class="line">|   |-- webpack.base.conf.js         // webpack基础配置</div><div class="line">|   |-- webpack.dev.conf.js          // webpack开发环境配置</div><div class="line">|   |-- webpack.prod.conf.js         // webpack生产环境配置</div><div class="line">|-- config                           // 项目开发环境配置</div><div class="line">|   |-- dev.env.js                   // 开发环境变量</div><div class="line">|   |-- index.js                     // 项目一些配置变量</div><div class="line">|   |-- prod.env.js                  // 生产环境变量</div><div class="line">|   |-- test.env.js                  // 测试环境变量</div><div class="line">|-- src                              // 源码目录</div><div class="line">|   |-- components                     // vue公共组件</div><div class="line">|   |-- store                          // vuex的状态管理</div><div class="line">|   |-- App.vue                        // 页面入口文件</div><div class="line">|   |-- main.js                        // 程序入口文件，加载各种公共组件</div><div class="line">|-- static                           // 静态文件，比如一些图片，json数据等</div><div class="line">|   |-- data                           // 群聊分析得到的数据用于数据可视化</div><div class="line">|-- .babelrc                         // ES6语法编译配置</div><div class="line">|-- .editorconfig                    // 定义代码格式</div><div class="line">|-- .gitignore                       // git上传需要忽略的文件格式</div><div class="line">|-- README.md                        // 项目说明</div><div class="line">|-- favicon.ico </div><div class="line">|-- index.html                       // 入口页面</div><div class="line">|-- package.json                     // 项目基本信息</div></pre></td></tr></table></figure>
-<h4 id="1-2-router-index-js"><a href="#1-2-router-index-js" class="headerlink" title="1.2 router/index.js"></a>1.2 router/index.js</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</div><div class="line">  <span class="attr">routes</span>: [              <span class="comment">//配置路由，这里是个数组</span></div><div class="line">    &#123;                    <span class="comment">//每一个链接都是一个对象</span></div><div class="line">      path: <span class="string">'/'</span>,         <span class="comment">//链接路径</span></div><div class="line">      name: <span class="string">'Hello'</span>,     <span class="comment">//路由名称，</span></div><div class="line">      component: Hello   <span class="comment">//对应的组件模板</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h4 id="1-3-router-link"><a href="#1-3-router-link" class="headerlink" title="1.3 router-link"></a>1.3 router-link</h4><ul>
-<li>相当于a标签</li>
-</ul>
-<p><code>&lt;router-link to=&quot;/&quot;&gt;[显示字段]&lt;/router-link&gt;</code></p>
-<p>to：填写router/index.js文件配置的path值</p>
-<h3 id="2-配置子路由"><a href="#2-配置子路由" class="headerlink" title="2.配置子路由"></a>2.配置子路由</h3><ul>
-<li><p>App.vue</p>
-</li>
-<li><p>components目录</p>
-</li>
-<li><p>router/index.js</p>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">children:[</div><div class="line">&#123;<span class="attr">path</span>:<span class="string">'/'</span>,<span class="attr">component</span>:xxx&#125;,</div><div class="line">&#123;<span class="attr">path</span>:<span class="string">'xx'</span>,<span class="attr">component</span>:xxx&#125;,</div><div class="line">]</div><div class="line"><span class="comment">//后面的子集不用加‘/’</span></div></pre></td></tr></table></figure>
-<h3 id="3-传递参数"><a href="#3-传递参数" class="headerlink" title="3.传递参数"></a>3.传递参数</h3><h4 id="3-1-name"><a href="#3-1-name" class="headerlink" title="3.1 name"></a>3.1 name</h4><ul>
-<li>有子路由的name是没用的</li>
-<li><code>&lt;p&gt;&lt;/p&gt;</code></li>
-</ul>
-<h4 id="3-2-to"><a href="#3-2-to" class="headerlink" title="3.2 :to"></a>3.2 :to</h4><p><strong><code>&lt;router-link</code></strong><code>:to=&quot;{name:xxx,params:{key:value}}&quot;</code><strong><code>&gt;</code></strong><code>valueString</code><strong><code>&lt;/router-link&gt;</code></strong></p>
-<p><code></code></p>
-<h3 id="4-单页面多路由区域"><a href="#4-单页面多路由区域" class="headerlink" title="4.单页面多路由区域"></a>4.单页面多路由区域</h3><ul>
-<li>一个页面有2个以上的&lt;router-view&gt;</li>
-<li>非常适合左右分栏，左边操作右边</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//App.vue</span></div><div class="line"> &lt;router-view &gt;&lt;/router-view&gt;</div><div class="line"> &lt;router-view name="left" style="float:left;width:50%;background-color:#ccc;height:300px;"&gt;&lt;/router-view&gt;</div><div class="line"> &lt;router-view name="right" style="float:right;width:50%;background-color:#c0c;height:300px;"&gt;&lt;/router-view&gt;</div><div class="line"> </div><div class="line">//router/index.js</div><div class="line">&#123;</div><div class="line">  path: '/',</div><div class="line">  name: 'Hello',</div><div class="line">  components: &#123;</div><div class="line">    default:Hello,</div><div class="line">    left:test01,</div><div class="line">    right:test02</div><div class="line">  &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h3 id="5-利用url传递参数"><a href="#5-利用url传递参数" class="headerlink" title="5.利用url传递参数"></a>5.利用url传递参数</h3><ul>
-<li>:号传递</li>
-<li>src/router/index.js 配置路由</li>
-<li>传递的数值在 </li>
-<li>可以使用正则规定传递的数组 path:’/params/:showId(\d+)/:name’</li>
-</ul>
-
+<h3 id="1-1-1-使用vue-cli搭建"><a href="#1-1-1-使用vue-cli搭建" class="headerlink" title="1.1.1 使用vue-cli搭建"></a>1.1.1 使用vue-cli搭建</h3>
+        
+          <p class="article-more-link">
+            <a href="/2017/06/28/vue-router/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/28/vue-router/" data-id="cj4gfc8h0000ay98zfpg7urnm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/28/vue-router/" data-id="cj4gfocqr000alg8z6ong855c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -163,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/05/js纯函数/" data-id="cj4gfc8gw0007y98zg2jamxiz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/05/js纯函数/" data-id="cj4gfocqo0007lg8zkapjyzll" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -208,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/05/js高阶函数/" data-id="cj4gfc8gy0009y98zufgp0grm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/05/js高阶函数/" data-id="cj4gfocqp0009lg8z5kivygyy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -252,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/js中call、bind、apply/" data-id="cj4gfc8gl0002y98z50nbpwfg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/js中call、bind、apply/" data-id="cj4gfocqe0002lg8z7mpk2nw3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -298,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/js中this碰到return时/" data-id="cj4gfc8gt0005y98z7cq4rdov" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/js中this碰到return时/" data-id="cj4gfocqg0003lg8z054qbczd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -343,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/js中this的指向/" data-id="cj4gfc8gn0003y98z3pkbzuiv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/27/js中this的指向/" data-id="cj4gfocqm0005lg8zuqsxcdhm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -387,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/27/js简单的观察者模式/" data-id="cj4gfc8gv0006y98zopi3m3f0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/27/js简单的观察者模式/" data-id="cj4gfocqn0006lg8zm5to1ma5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -431,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/23/正则表达式学习/" data-id="cj4gfc8h4000fy98zmgtalwu9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/23/正则表达式学习/" data-id="cj4gfocqv000flg8ze6jthx49" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -475,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/14/css布局/" data-id="cj4gfc8gd0000y98z8xiky417" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/14/css布局/" data-id="cj4gfocq70000lg8zlsuh50j3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -517,7 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/13/开通hexo的感想/" data-id="cj4gfc8h2000dy98z7gszn9az" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/13/开通hexo的感想/" data-id="cj4gfocqt000dlg8z33qx1fwc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -606,7 +578,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
+      &copy; 2017 李良权<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
