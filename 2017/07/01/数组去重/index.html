@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数组去重 | 向前奔跑的蚂蚁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天工作遇到此问题，主要是根据对象某属性去除重复的。 数组根据对象属性去重 1采用lodash的uniqBy方法 2 reduce">
+<meta name="keywords" content="数组 去重">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组去重">
+<meta property="og:url" content="http://yoursite.com/2017/07/01/数组去重/index.html">
+<meta property="og:site_name" content="向前奔跑的蚂蚁">
+<meta property="og:description" content="今天工作遇到此问题，主要是根据对象某属性去除重复的。 数组根据对象属性去重 1采用lodash的uniqBy方法 2 reduce">
+<meta property="og:updated_time" content="2017-07-01T08:57:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组去重">
+<meta name="twitter:description" content="今天工作遇到此问题，主要是根据对象某属性去除重复的。 数组根据对象属性去重 1采用lodash的uniqBy方法 2 reduce">
+  
+    <link rel="alternate" href="/atom.xml" title="向前奔跑的蚂蚁" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">向前奔跑的蚂蚁</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数组去重" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/01/数组去重/" class="article-date">
+  <time datetime="2017-07-01T08:16:36.000Z" itemprop="datePublished">2017-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数组去重
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天工作遇到此问题，主要是根据对象某属性去除重复的。</p>
+<h2 id="数组根据对象属性去重"><a href="#数组根据对象属性去重" class="headerlink" title="数组根据对象属性去重"></a>数组根据对象属性去重</h2><ul>
+<li>1采用lodash的uniqBy方法</li>
+<li>2 reduce</li>
+</ul>
+<a id="more"></a>
+<h3 id="1-采用lodash的uniqBy方法"><a href="#1-采用lodash的uniqBy方法" class="headerlink" title="1 采用lodash的uniqBy方法"></a>1 采用lodash的uniqBy方法</h3><pre><code>let arr=[{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:3}];
+   _.uniqBy(arr, &apos;quarter&apos;);
+</code></pre><h3 id="2-采用原生reduce方法"><a href="#2-采用原生reduce方法" class="headerlink" title="2     采用原生reduce方法"></a>2     采用原生reduce方法</h3><pre><code>    //1
+    var arr=[{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:3}];
+    var hash = {};
+    arr.reduce(function(item, next) {
+        hash[next.quarter] ? &apos;&apos; : hash[next. quarter] = true &amp;&amp; item.push(next);
+        return item
+    }, [])
+
+
+    //2
+    var arr1=[{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:3}];
+var set = arr1.reduce(
+  function(set, item) {
+    set[item[&quot;quarter&quot;]] = item;
+    return set;
+  },
+  {}
+);
+
+Object.keys(set).map(function(key) { return set[key]; });    
+</code></pre><h3 id="3-利用set的不可重复性"><a href="#3-利用set的不可重复性" class="headerlink" title="3 利用set的不可重复性"></a>3 利用set的不可重复性</h3><h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><h3 id="1-遍历循环"><a href="#1-遍历循环" class="headerlink" title="1 遍历循环"></a>1 遍历循环</h3><pre><code>Array.prototype.method1 = function(){  
+           var arr[];    //定义一个临时数组  
+           for(var i = 0; i &lt; this.length; i++){    //循环遍历当前数组  
+               //判断当前数组下标为i的元素是否已经保存到临时数组  
+               //如果已保存，则跳过，否则将此元素保存到临时数组中  
+               if(arr1.indexOf(this[i]) == -1){  
+                   arr.push(this[i]);  
+               }  
+           }  
+           return arr;  
+       }  
+</code></pre><h3 id="2-hash表"><a href="#2-hash表" class="headerlink" title="2 hash表"></a>2 hash表</h3><pre><code>Array.prototype.method2 = function(){  
+        var h{};    //定义一个hash表  
+        var arr[];  //定义一个临时数组  
+
+        for(var i = 0; i &lt; this.length; i++){    //循环遍历当前数组  
+            //对元素进行判断，看是否已经存在表中，如果存在则跳过，否则存入临时数组  
+            if(!h[this[i]]){  
+                //存入hash表  
+                h[this[i]] = true;  
+                //把当前数组元素存入到临时数组中  
+                arr.push(this[i]);  
+            }  
+        }  
+        return arr;  
+    }      
+</code></pre><h3 id="3-循环遍历"><a href="#3-循环遍历" class="headerlink" title="3 循环遍历"></a>3 循环遍历</h3><pre><code>Array.prototype.method3 = function(){  
+           //直接定义结果数组  
+           var arr[this[0]];  
+           for(var i = 1; i &lt; this.length; i++){    //从数组第二项开始循环遍历此数组  
+               //对元素进行判断：  
+               //如果数组当前元素在此数组中第一次出现的位置不是i  
+               //那么我们可以判断第i项元素是重复的，否则直接存入结果数组  
+               if(this.indexOf(this[i]) == i){  
+                   arr.push(this[i]);  
+               }  
+           }  
+           return arr;  
+
+       }                      
+</code></pre><h3 id="4-先排序"><a href="#4-先排序" class="headerlink" title="4 先排序"></a>4 先排序</h3><pre><code>Array.prototype.method4 = function(){  
+       //将数组进行排序  
+       this.sort();  
+       //定义结果数组  
+       var arr[this[0]];  
+       for(var i = 1; i &lt; this.length; i++){    //从数组第二项开始循环遍历数组  
+           //判断相邻两个元素是否相等，如果相等说明数据重复，否则将元素写入结果数组  
+           if(this[i] !== arr[arr.length - 1]){  
+               arr.push(this[i]);  
+           }              
+       }  
+       return arr;  
+
+   }              
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/01/数组去重/" data-id="cj4l1yjpm000ang8zk8o56k5d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组-去重/">数组 去重</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/28/js-Array/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">es5 and es6 Array</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组-去重/">数组 去重</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/数组-去重/" style="font-size: 10px;">数组 去重</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/01/数组去重/">数组去重</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/28/js-Array/">es5 and es6 Array</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/28/vue-router/">vue-router</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/js高阶函数/">javascript高阶函数</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/js纯函数/">js纯函数</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 李良权<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
