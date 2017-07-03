@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/01/数组去重/index.html">
 <meta property="og:site_name" content="向前奔跑的蚂蚁">
 <meta property="og:description" content="今天工作遇到此问题，主要是根据对象某属性去除重复的。 数组根据对象属性去重 1采用lodash的uniqBy方法 2 reduce">
-<meta property="og:updated_time" content="2017-07-01T08:57:03.000Z">
+<meta property="og:updated_time" content="2017-07-03T01:31:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组去重">
 <meta name="twitter:description" content="今天工作遇到此问题，主要是根据对象某属性去除重复的。 数组根据对象属性去重 1采用lodash的uniqBy方法 2 reduce">
@@ -92,8 +92,11 @@
 <li>2 reduce</li>
 </ul>
 <a id="more"></a>
-<h3 id="1-采用lodash的uniqBy方法"><a href="#1-采用lodash的uniqBy方法" class="headerlink" title="1 采用lodash的uniqBy方法"></a>1 采用lodash的uniqBy方法</h3><pre><code>let arr=[{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:3}];
+<h3 id="1-采用lodash的uniqBy-uniqWith方法"><a href="#1-采用lodash的uniqBy-uniqWith方法" class="headerlink" title="1 采用lodash的uniqBy, uniqWith方法"></a>1 采用lodash的uniqBy, uniqWith方法</h3><pre><code>let arr=[{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:3}];
    _.uniqBy(arr, &apos;quarter&apos;);
+
+  var arr=[{x:1, quarter:4},{x:11, quarter:4},{x:1, quarter:4},{x:1, quarter:3}];
+ _.uniqWith(arr, function(item,next){return item.x==next.x&amp;&amp;item.quarter==next.quarter?true:false});
 </code></pre><h3 id="2-采用原生reduce方法"><a href="#2-采用原生reduce方法" class="headerlink" title="2     采用原生reduce方法"></a>2     采用原生reduce方法</h3><pre><code>    //1
     var arr=[{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:4},{x:1, quarter:3}];
     var hash = {};
@@ -172,7 +175,7 @@ Object.keys(set).map(function(key) { return set[key]; });
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/01/数组去重/" data-id="cj4l1yjpm000ang8zk8o56k5d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/01/数组去重/" data-id="cj4nhdki9000az98zw348idzn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组-去重/">数组 去重</a></li></ul>
@@ -249,11 +252,11 @@ Object.keys(set).map(function(key) { return set[key]; });
           </li>
         
           <li>
-            <a href="/2017/02/05/js高阶函数/">javascript高阶函数</a>
+            <a href="/2017/02/05/js纯函数/">js纯函数</a>
           </li>
         
           <li>
-            <a href="/2017/02/05/js纯函数/">js纯函数</a>
+            <a href="/2017/02/05/js高阶函数/">javascript高阶函数</a>
           </li>
         
       </ul>
