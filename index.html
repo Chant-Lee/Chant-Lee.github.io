@@ -61,6 +61,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Date交互" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/06/Date交互/" class="article-date">
+  <time datetime="2017-07-06T03:27:17.000Z" itemprop="datePublished">2017-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/06/Date交互/">Date交互</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="关于Data对象的使用经验"><a href="#关于Data对象的使用经验" class="headerlink" title="关于Data对象的使用经验"></a>关于Data对象的使用经验</h2><p>YY-MM-DD</p>
+<pre><code>JSON.stringify( new Date()  ).replace(/T.*|&quot;/g, &quot;&quot;)
+//2017-07-06
+</code></pre><p>yyyy-mm-dd HH:mm:ss:fff</p>
+<pre><code>JSON.stringify(
+        new Date()
+      ).replace(/T|&quot;|\..*/g,&quot; &quot;).trim()    //2017-07-06 03:25:11
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/06/Date交互/" data-id="cj4s378wh0000t18zi9bz1bm0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/经验/">经验</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-数组去重" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/01/数组去重/" class="article-date">
@@ -96,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/01/数组去重/" data-id="cj4nhdki9000az98zw348idzn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/01/数组去重/" data-id="cj4s378xi000ot18zx740pf4o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组-去重/">数组 去重</a></li></ul>
@@ -158,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/28/js-Array/" data-id="cj4nhdkhx0003z98zb399ilkw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/28/js-Array/" data-id="cj4s378wx0005t18zppr9igho" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,53 +245,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/28/vue-router/" data-id="cj4nhdkie000fz98zh7yc9wk4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/28/vue-router/" data-id="cj4s378xg000lt18zygexq4f1" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js纯函数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/05/js纯函数/" class="article-date">
-  <time datetime="2017-02-05T13:31:08.000Z" itemprop="datePublished">2017-02-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/05/js纯函数/">js纯函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="js纯函数"><a href="#js纯函数" class="headerlink" title="js纯函数"></a>js纯函数</h2><h3 id="javascript纯函数"><a href="#javascript纯函数" class="headerlink" title="javascript纯函数"></a>javascript纯函数</h3><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。<br>  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。</p>
-<p>  纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/02/05/js纯函数/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/05/js纯函数/" data-id="cj4nhdki80009z98zm53wxum2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
-
     </footer>
   </div>
   
@@ -287,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/05/js高阶函数/" data-id="cj4nhdkib000dz98zk8c0s9vj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/05/js高阶函数/" data-id="cj4s378x5000bt18z2cw4sbvs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -299,10 +300,10 @@
 
 
   
-    <article id="post-js中call、bind、apply" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js纯函数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/27/js中call、bind、apply/" class="article-date">
-  <time datetime="2016-06-27T14:31:08.000Z" itemprop="datePublished">2016-06-27</time>
+    <a href="/2017/02/05/js纯函数/" class="article-date">
+  <time datetime="2017-02-05T13:31:08.000Z" itemprop="datePublished">2017-02-05</time>
 </a>
     
   </div>
@@ -313,7 +314,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/27/js中call、bind、apply/">js中call、call、apply</a>
+      <a class="article-title" href="/2017/02/05/js纯函数/">js纯函数</a>
     </h1>
   
 
@@ -321,17 +322,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="js中call-appply-bind理解"><a href="#js中call-appply-bind理解" class="headerlink" title="js中call appply bind理解"></a>js中call appply bind理解</h3><p>一般用来指定this的环境，在没有学之前，通常会有这些问题。<br>[参考网站： <a href="http://www.cnblogs.com/pssp/p/5215621.html" target="_blank" rel="external">http://www.cnblogs.com/pssp/p/5215621.html</a>]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a = &#123;</div><div class="line">    user:&quot;追梦子&quot;,</div><div class="line">    fn:function()&#123;</div><div class="line">        console.log(this.user);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var b = a.fn;</div><div class="line">b(); //undefined</div></pre></td></tr></table></figure>
+        <h2 id="js纯函数"><a href="#js纯函数" class="headerlink" title="js纯函数"></a>js纯函数</h2><h3 id="javascript纯函数"><a href="#javascript纯函数" class="headerlink" title="javascript纯函数"></a>javascript纯函数</h3><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。<br>  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。</p>
+<p>  纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。</p>
         
           <p class="article-more-link">
-            <a href="/2016/06/27/js中call、bind、apply/#more">Read More</a>
+            <a href="/2017/02/05/js纯函数/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/js中call、bind、apply/" data-id="cj4nhdkhv0002z98zex10lxf0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/05/js纯函数/" data-id="cj4s378x7000et18zawmbll77" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -377,7 +378,51 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/js中this碰到return时/" data-id="cj4nhdki40006z98z5vwbyqw1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/js中this碰到return时/" data-id="cj4s378x4000at18zm2mdfo9u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js中call、bind、apply" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/27/js中call、bind、apply/" class="article-date">
+  <time datetime="2016-06-27T14:31:08.000Z" itemprop="datePublished">2016-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/27/js中call、bind、apply/">js中call、call、apply</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="js中call-appply-bind理解"><a href="#js中call-appply-bind理解" class="headerlink" title="js中call appply bind理解"></a>js中call appply bind理解</h3><p>一般用来指定this的环境，在没有学之前，通常会有这些问题。<br>[参考网站： <a href="http://www.cnblogs.com/pssp/p/5215621.html" target="_blank" rel="external">http://www.cnblogs.com/pssp/p/5215621.html</a>]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a = &#123;</div><div class="line">    user:&quot;追梦子&quot;,</div><div class="line">    fn:function()&#123;</div><div class="line">        console.log(this.user);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var b = a.fn;</div><div class="line">b(); //undefined</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/27/js中call、bind、apply/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/27/js中call、bind、apply/" data-id="cj4s378wv0004t18zrntuqzi9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -422,7 +467,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/js中this的指向/" data-id="cj4nhdki10005z98ziusguhtr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/27/js中this的指向/" data-id="cj4s378x30008t18zsq7wd2co" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -466,51 +511,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/27/js简单的观察者模式/" data-id="cj4nhdki60007z98zkd5a6iig" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-正则表达式学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/23/正则表达式学习/" class="article-date">
-  <time datetime="2016-03-23T13:56:24.000Z" itemprop="datePublished">2016-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/23/正则表达式学习/">正则表达式学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>   作为前端的初学者，正在研究正则表达式，写了一点demo和总结。也要感谢孙师兄的教导。<br>   正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。<br>   正则表达式的特点是：1. 灵活性、逻辑性和功能性非常的强；2. 可以迅速地用极简单的方式达到字符串的复杂控制。3. 对于刚接触的人来说，比较晦涩难懂。</p>
-<h2 id="以下是自己写的一些demo"><a href="#以下是自己写的一些demo" class="headerlink" title="以下是自己写的一些demo"></a>以下是自己写的一些demo</h2><h3 id="基本符号"><a href="#基本符号" class="headerlink" title="基本符号"></a>基本符号</h3><h4 id="demo1-“-”（或）、“-”、“-”"><a href="#demo1-“-”（或）、“-”、“-”" class="headerlink" title="demo1 “|”（或）、“^”、“$”"></a>demo1 “|”（或）、“^”、“$”</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   //<span class="string">'你'</span> 或 <span class="string">'好'</span></div><div class="line">  //^ 标记文字的开始 ::start</div><div class="line"> //$ 标记文字的结束 ::end</div><div class="line">var regex = /^你|好$/;</div><div class="line">console.log(regex.test(<span class="string">'一'</span>) === <span class="literal">true</span>);</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/03/23/正则表达式学习/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/23/正则表达式学习/" data-id="cj4nhdkil000kz98zvfhxicee" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/27/js简单的观察者模式/" data-id="cj4s378x00007t18zdg1qt6hl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -538,7 +539,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组-去重/">数组 去重</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组-去重/">数组 去重</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/经验/">经验</a></li></ul>
     </div>
   </div>
 
@@ -548,7 +549,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/数组-去重/" style="font-size: 10px;">数组 去重</a>
+      <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/数组-去重/" style="font-size: 10px;">数组 去重</a> <a href="/tags/经验/" style="font-size: 10px;">经验</a>
     </div>
   </div>
 
@@ -570,6 +571,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/06/Date交互/">Date交互</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/01/数组去重/">数组去重</a>
           </li>
         
@@ -579,10 +584,6 @@
         
           <li>
             <a href="/2017/06/28/vue-router/">vue-router</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/05/js纯函数/">js纯函数</a>
           </li>
         
           <li>

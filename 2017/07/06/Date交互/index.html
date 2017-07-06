@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | 向前奔跑的蚂蚁</title>
+  <title>Date交互 | 向前奔跑的蚂蚁</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="关于Data对象的使用经验YY-MM-DD JSON.stringify( new Date()  ).replace(/T.*|&amp;quot;/g, &amp;quot;&amp;quot;) //2017-07-06 yyyy-mm-dd HH:mm:ss:fff JSON.stringify(         new Date()       ).replace(/T|&amp;quot;|\..*/g,&amp;quot;">
+<meta name="keywords" content="技术,经验,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/02/14/hello-world/index.html">
+<meta property="og:title" content="Date交互">
+<meta property="og:url" content="http://yoursite.com/2017/07/06/Date交互/index.html">
 <meta property="og:site_name" content="向前奔跑的蚂蚁">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-06-28T03:06:01.000Z">
+<meta property="og:description" content="关于Data对象的使用经验YY-MM-DD JSON.stringify( new Date()  ).replace(/T.*|&amp;quot;/g, &amp;quot;&amp;quot;) //2017-07-06 yyyy-mm-dd HH:mm:ss:fff JSON.stringify(         new Date()       ).replace(/T|&amp;quot;|\..*/g,&amp;quot;">
+<meta property="og:updated_time" content="2017-07-06T03:31:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Date交互">
+<meta name="twitter:description" content="关于Data对象的使用经验YY-MM-DD JSON.stringify( new Date()  ).replace(/T.*|&amp;quot;/g, &amp;quot;&amp;quot;) //2017-07-06 yyyy-mm-dd HH:mm:ss:fff JSON.stringify(         new Date()       ).replace(/T|&amp;quot;|\..*/g,&amp;quot;">
   
     <link rel="alternate" href="/atom.xml" title="向前奔跑的蚂蚁" type="application/atom+xml">
   
@@ -63,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Date交互" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/02/14/hello-world/" class="article-date">
-  <time datetime="2016-02-14T14:03:08.000Z" itemprop="datePublished">2016-02-14</time>
+    <a href="/2017/07/06/Date交互/" class="article-date">
+  <time datetime="2017-07-06T03:27:17.000Z" itemprop="datePublished">2017-07-06</time>
 </a>
     
   </div>
@@ -77,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Date交互
     </h1>
   
 
@@ -85,37 +86,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <h2 id="关于Data对象的使用经验"><a href="#关于Data对象的使用经验" class="headerlink" title="关于Data对象的使用经验"></a>关于Data对象的使用经验</h2><p>YY-MM-DD</p>
+<pre><code>JSON.stringify( new Date()  ).replace(/T.*|&quot;/g, &quot;&quot;)
+//2017-07-06
+</code></pre><p>yyyy-mm-dd HH:mm:ss:fff</p>
+<pre><code>JSON.stringify(
+        new Date()
+      ).replace(/T|&quot;|\..*/g,&quot; &quot;).trim()    //2017-07-06 03:25:11
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/14/hello-world/" data-id="cj4s378ws0003t18z9uympzme" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/06/Date交互/" data-id="cj4s378wh0000t18zi9bz1bm0" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/经验/">经验</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2016/03/13/开通hexo的感想/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          开通hexo的感想
-        
-      </div>
-    </a>
   
+    <a href="/2017/07/01/数组去重/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数组去重</div>
+    </a>
   
 </nav>
 
