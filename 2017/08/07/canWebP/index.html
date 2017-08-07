@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/7 | 向前奔跑的蚂蚁</title>
+  <title>图片是否支持canWebP格式 | 向前奔跑的蚂蚁</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="向前奔跑的蚂蚁">
-<meta property="og:url" content="http://yoursite.com/archives/2017/07/index.html">
+  <meta name="description" content="关于图片加载是否支持webp格式 js前端检测：  利用img标签加载时候触发的onload以及onerror事件，判断图片是否具有宽高，若有，则表示支持WebP，否则，就不支持。  后台判断：  判断浏览器的请求头Accept是否支持WebP。 具体实施方案：">
+<meta name="keywords" content="图片">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片是否支持canWebP格式">
+<meta property="og:url" content="http://yoursite.com/2017/08/07/canWebP/index.html">
 <meta property="og:site_name" content="向前奔跑的蚂蚁">
+<meta property="og:description" content="关于图片加载是否支持webp格式 js前端检测：  利用img标签加载时候触发的onload以及onerror事件，判断图片是否具有宽高，若有，则表示支持WebP，否则，就不支持。  后台判断：  判断浏览器的请求头Accept是否支持WebP。 具体实施方案：">
+<meta property="og:updated_time" content="2017-08-07T06:35:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="向前奔跑的蚂蚁">
+<meta name="twitter:title" content="图片是否支持canWebP格式">
+<meta name="twitter:description" content="关于图片加载是否支持webp格式 js前端检测：  利用img标签加载时候触发的onload以及onerror事件，判断图片是否具有宽高，若有，则表示支持WebP，否则，就不支持。  后台判断：  判断浏览器的请求头Accept是否支持WebP。 具体实施方案：">
   
     <link rel="alternate" href="/atom.xml" title="向前奔跑的蚂蚁" type="application/atom+xml">
   
@@ -59,58 +64,96 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/06/Date交互/" class="archive-article-date">
-  <time datetime="2017-07-06T03:27:17.000Z" itemprop="datePublished">Jul 6</time>
+        <section id="main"><article id="post-canWebP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/07/canWebP/" class="article-date">
+  <time datetime="2017-08-07T06:27:57.000Z" itemprop="datePublished">2017-08-07</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/06/Date交互/">Date交互</a>
+    <h1 class="article-title" itemprop="name">
+      图片是否支持canWebP格式
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/01/数组去重/" class="archive-article-date">
-  <time datetime="2017-07-01T08:16:36.000Z" itemprop="datePublished">Jul 1</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/01/数组去重/">数组去重</a>
-    </h1>
-  
+        <h3 id="关于图片加载是否支持webp格式"><a href="#关于图片加载是否支持webp格式" class="headerlink" title="关于图片加载是否支持webp格式"></a>关于图片加载是否支持webp格式</h3><ul>
+<li>js前端检测：</li>
+</ul>
+<p>利用img标签加载时候触发的onload以及onerror事件，判断图片是否具有宽高，若有，则表示支持WebP，否则，就不支持。</p>
+<ul>
+<li>后台判断：</li>
+</ul>
+<p>判断浏览器的请求头Accept是否支持WebP。</p>
+<p>具体实施方案：</p>
+<a id="more"></a>
+<p>最终采用了js检测方法来检测是否支持WebP，采用img标签对一个透明/无损的base64（减少图片请求）WebP图片发起请求（保证浏览器是完全，而非部分支持WebP），再根据成功时候的onload或者失败时候onerror事件，来判断浏览器是否支持WebP。同时将浏览器支持的结果放入到window变量中，方便之后来进行判断。</p>
+<pre><code>window.canWebP=false;
+ function  isWebp(){
+ var img = new Image();
+     img.onload = function () {
+         window.canWebP = (img.width &gt; 0) &amp;&amp; (img.height &gt; 0);
+     };
+     img.onerror = function () {
+         window.canWebP = false;
+     }
+     img.src = &apos;data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==&apos;;
+ }
+</code></pre><h3 id="vue-lazyload源码判断参考"><a href="#vue-lazyload源码判断参考" class="headerlink" title="vue-lazyload源码判断参考"></a>vue-lazyload源码判断参考</h3><pre><code>const inBrowser = typeof window !== &apos;undefined&apos;;
+function supportWebp () {
+  if (!inBrowser) return false;
 
-    </header>
+  let support = true
+  const d = document
+
+  try {
+    let el = d.createElement(&apos;object&apos;)
+    el.type = &apos;image/webp&apos;
+    el.style.visibility = &apos;hidden&apos;
+    el.innerHTML = &apos;!&apos;
+    d.body.appendChild(el)
+    support = !el.offsetWidth
+    d.body.removeChild(el)
+  } catch (err) {
+    support = false
+  }
+
+  return support
+}        
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/07/canWebP/" data-id="cj61sbfgn0001lhfyusope7l9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图片/">图片</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/06/Date交互/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Date交互</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
