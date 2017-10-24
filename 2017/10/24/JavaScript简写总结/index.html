@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript简写总结 | 向前奔跑的蚂蚁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JS简写技巧总结1 三目运算符2 循环语句 循环的时候采用foreach方法之类，尽量不用for循环。">
+<meta name="keywords" content="js经验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript简写总结">
+<meta property="og:url" content="http://yoursite.com/2017/10/24/JavaScript简写总结/index.html">
+<meta property="og:site_name" content="向前奔跑的蚂蚁">
+<meta property="og:description" content="JS简写技巧总结1 三目运算符2 循环语句 循环的时候采用foreach方法之类，尽量不用for循环。">
+<meta property="og:updated_time" content="2017-10-24T03:54:48.782Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript简写总结">
+<meta name="twitter:description" content="JS简写技巧总结1 三目运算符2 循环语句 循环的时候采用foreach方法之类，尽量不用for循环。">
+  
+    <link rel="alternate" href="/atom.xml" title="向前奔跑的蚂蚁" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">向前奔跑的蚂蚁</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript简写总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/24/JavaScript简写总结/" class="article-date">
+  <time datetime="2017-10-24T03:31:59.000Z" itemprop="datePublished">2017-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript简写总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS简写技巧总结"><a href="#JS简写技巧总结" class="headerlink" title="JS简写技巧总结"></a>JS简写技巧总结</h2><h3 id="1-三目运算符"><a href="#1-三目运算符" class="headerlink" title="1 三目运算符"></a>1 三目运算符</h3><h3 id="2-循环语句"><a href="#2-循环语句" class="headerlink" title="2 循环语句"></a>2 循环语句</h3><p> 循环的时候采用foreach方法之类，尽量不用for循环。</p>
+<a id="more"></a>
+<h3 id="3-生命变量"><a href="#3-生命变量" class="headerlink" title="3 生命变量"></a>3 生命变量</h3><pre><code>let x;
+let y;
+let z = 3;
+简写为
+let x, y, z=3;
+</code></pre><h3 id="4-变量赋值或者默认值"><a href="#4-变量赋值或者默认值" class="headerlink" title="4 变量赋值或者默认值"></a>4 变量赋值或者默认值</h3><p>当将一个变量的值赋给另一个变量时，首先需要确保原值不是 null、未定义的或空值。</p>
+<pre><code>if (a !== null || a !== undefined || a !== &apos;&apos;) {
+     let b = a;
+}
+简写
+const b = a  || &apos;&apos;;
+</code></pre><h3 id="5-对象属性"><a href="#5-对象属性" class="headerlink" title="5 对象属性"></a>5 对象属性</h3><p>ES6 提供了一个很简单的办法，来分配属性的对象。如果属性名与 key 名相同，则可以使用简写。</p>
+<pre><code>const obj = { x:x, y:y };
+简写为：
+const obj = { x, y };
+</code></pre><h3 id="6-箭头函数"><a href="#6-箭头函数" class="headerlink" title="6 箭头函数"></a>6 箭头函数</h3><pre><code>function sayHello(name) {
+  console.log(&apos;Hello&apos;, name);
+}
+简写为：
+sayHello = name =&gt; console.log(&apos;Hello&apos;, name);
+</code></pre><h3 id="7-函数默认参数值"><a href="#7-函数默认参数值" class="headerlink" title="7 函数默认参数值"></a>7 函数默认参数值</h3><pre><code>function test(a, b, c) {
+  if (a === undefined)
+    a = 3;
+  if (b === undefined)
+    b = 4;
+  return a + b * c;
+}    
+
+test = (a, b = 2, c= 4 ) =&gt; ( a+ b* c);
+</code></pre><h3 id="8-解构赋值"><a href="#8-解构赋值" class="headerlink" title="8 解构赋值"></a>8 解构赋值</h3><p>解构赋值是一种表达式，用于从数组或对象中快速提取属性值，并赋给定义的变量。</p>
+<p>在代码简写方面，解构赋值能达到很好的效果。    </p>
+<pre><code>let { log, sin, cos } = Math;
+</code></pre><p>上面代码将Math对象的对数、正弦、余弦三个方法，赋值到对应的变量上，使用起来就会方便很多。    </p>
+<ul>
+<li><p>1交换变量值</p>
+<pre><code>[x, y] = [y, x];
+</code></pre><p>  上面代码交换变量x和y的值，这样的写法不仅简洁，而且易读，语义非常清晰。    </p>
+</li>
+<li><p>2 从函数返回多个值</p>
+</li>
+</ul>
+<p>函数只能返回一个值，如果要返回多个值，只能将它们放在数组或对象里返回。有了解构赋值，取出这些值就非常方便。</p>
+<pre><code>// 返回一个数组
+
+function example() {
+  return [1, 2, 3];
+}
+var [a, b, c] = example();
+
+// 返回一个对象
+
+function example() {
+  return {
+    foo: 1,
+    bar: 2
+  };
+}
+var { foo, bar } = example();
+</code></pre><ul>
+<li><p>3 函数参数定义<br>解构赋值可以方便地将一组参数与变量名对应起来。</p>
+<pre><code>// 参数是一组有次序的值
+function f([x, y, z]) { ... }
+f([1, 2, 3]);
+
+// 参数是一组无次序的值
+function f({x, y, z}) { ... }
+f({z: 3, y: 2, x: 1});
+</code></pre></li>
+<li><p>4 提取json数据</p>
+</li>
+</ul>
+<p>解构赋值对提取JSON对象中的数据，尤其有用。</p>
+<pre><code>var jsonData = {
+  id: 42,
+  status: &quot;OK&quot;,
+  data: [867, 5309]
+};
+
+let { id, status, data: number } = jsonData;
+
+console.log(id, status, number);
+// 42, &quot;OK&quot;, [867, 5309]
+</code></pre><p>上面代码可以快速提取JSON数据的值。</p>
+<ul>
+<li><p>5 函数参数默认值</p>
+<pre><code>jQuery.ajax = function (url, {
+  async = true,
+  beforeSend = function () {},
+  cache = true,
+  complete = function () {},
+  crossDomain = false,
+  global = true,
+  // ... more config
+}) {
+  // ... do stuff
+};
+</code></pre><p>指定参数的默认值，就避免了在函数体内部再写var foo = config.foo || ‘default foo’;这样的语句。</p>
+</li>
+<li><p>6 遍历map结构<br>任何部署了Iterator接口的对象，都可以用for…of循环遍历。Map结构原生支持Iterator接口，配合变量的解构赋值，获取键名和键值就非常方便。</p>
+<pre><code>var map = new Map();
+map.set(&apos;first&apos;, &apos;hello&apos;);
+map.set(&apos;second&apos;, &apos;world&apos;);
+
+for (let [key, value] of map) {
+  console.log(key + &quot; is &quot; + value);
+}
+// first is hello
+// second is world
+如果只想获取键名，或者只想获取键值，可以写成下面这样。
+
+// 获取键名
+for (let [key] of map) {
+  // ...
+}
+
+// 获取键值
+for (let [,value] of map) {
+  // ...
+</code></pre><p>  }</p>
+</li>
+<li><p>7 输入模板指定的方法<br>加载模块时，往往需要指定输入那些方法。解构赋值使得输入语句非常清晰。</p>
+<p>  const { SourceMapConsumer, SourceNode } =             require(“source-map”);</p>
+</li>
+</ul>
+<h3 id="9-展开运算符"><a href="#9-展开运算符" class="headerlink" title="9 展开运算符"></a>9 展开运算符</h3><p>展开运算符是在 ES6 中引入的，使用展开运算符能够让 JavaScript 代码更加有效和有趣。</p>
+<p>使用展开运算符可以替换某些数组函数。</p>
+<pre><code>// joining arrays
+const odd = [1, 3, 5];
+const nums = [2 ,4 , 6].concat(odd);
+
+// cloning arrays
+const arr = [1, 2, 3, 4];
+const arr2 = arr.slice( )
+
+    // joining arrays
+    const odd = [1, 3, 5 ];
+    const nums = [2 ,4 , 6, ...odd];
+    console.log(nums); // [ 2, 4, 6, 1, 3, 5 ]
+
+    // cloning arrays
+    const arr = [1, 2, 3, 4];
+    const arr2 = [...arr];
+</code></pre><h3 id="10-Object-key"><a href="#10-Object-key" class="headerlink" title="10 Object [key]"></a>10 Object [key]</h3><p>虽然将 foo.bar 写成 foo [‘bar’] 是一种常见的做法，但是这种做法构成了编写可重用代码的基础。</p>
+<p>请考虑下面这个验证函数的简化示例</p>
+<pre><code>function validate(values) {
+  if(!values.first)
+    return false;
+  if(!values.last)
+    return false;
+  return true;
+}
+console.log(validate({first:&apos;Bruce&apos;,last:&apos;Wayne&apos;})); // true
+</code></pre><p>上面的函数完美的完成验证工作。但是当有很多表单，则需要应用验证，此时会有不同的字段和规则。如果可以构建一个在运行时配置的通用验证函数，会是一个好选择<br>        // object validation rules<br>        const schema = {<br>          first: {<br>            required:true<br>          },<br>          last: {<br>            required:true<br>          }<br>        }</p>
+<pre><code>// universal validation function
+const validate = (schema, values) =&gt; {
+  for(field in schema) {
+    if(schema[field].required) {
+      if(!values[field]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+console.log(validate(schema, {first:&apos;Bruce&apos;})); // false
+console.log(validate(schema, {first:&apos;Bruce&apos;,last:&apos;Wayne&apos;})); // true        
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/24/JavaScript简写总结/" data-id="cj952wh3w00000e8zjrlnrq5j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js经验/">js经验</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/07/canWebP/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">图片是否支持canWebP格式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/js经验/">js经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片/">图片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组-去重/">数组 去重</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/经验/">经验</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/js经验/" style="font-size: 10px;">js经验</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/图片/" style="font-size: 10px;">图片</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/数组-去重/" style="font-size: 10px;">数组 去重</a> <a href="/tags/经验/" style="font-size: 10px;">经验</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/24/JavaScript简写总结/">JavaScript简写总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/07/canWebP/">图片是否支持canWebP格式</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/06/Date交互/">Date交互</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/01/数组去重/">数组去重</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/28/js-Array/">es5 and es6 Array</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 李良权<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
