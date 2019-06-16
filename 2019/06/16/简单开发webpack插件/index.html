@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="技术,前端," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -94,18 +94,17 @@
 
 
 
-<meta name="description" content="js纯函数javascript纯函数定义  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。   纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。">
-<meta name="keywords" content="技术,前端">
+<meta name="description" content="webpack简单插件开发官方教程 创建插件插件开发组成 一个 JavaScript 命名函数。 在插件函数的 prototype 上定义一个 apply 方法。 指定一个绑定到 webpack 自身的事件钩子。 处理 webpack 内部实例的特定数据。 功能完成后调用 webpack 提供的回调。  伪代码如下所示：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js纯函数">
-<meta property="og:url" content="http://yoursite.com/2017/02/05/js纯函数/index.html">
+<meta property="og:title" content="简单开发webpack插件">
+<meta property="og:url" content="http://yoursite.com/2019/06/16/简单开发webpack插件/index.html">
 <meta property="og:site_name" content="向前奔跑的蚂蚁">
-<meta property="og:description" content="js纯函数javascript纯函数定义  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。   纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。">
+<meta property="og:description" content="webpack简单插件开发官方教程 创建插件插件开发组成 一个 JavaScript 命名函数。 在插件函数的 prototype 上定义一个 apply 方法。 指定一个绑定到 webpack 自身的事件钩子。 处理 webpack 内部实例的特定数据。 功能完成后调用 webpack 提供的回调。  伪代码如下所示：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-02-09T13:16:52.000Z">
+<meta property="og:updated_time" content="2019-06-16T12:37:24.043Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js纯函数">
-<meta name="twitter:description" content="js纯函数javascript纯函数定义  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。   纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。">
+<meta name="twitter:title" content="简单开发webpack插件">
+<meta name="twitter:description" content="webpack简单插件开发官方教程 创建插件插件开发组成 一个 JavaScript 命名函数。 在插件函数的 prototype 上定义一个 apply 方法。 指定一个绑定到 webpack 自身的事件钩子。 处理 webpack 内部实例的特定数据。 功能完成后调用 webpack 提供的回调。  伪代码如下所示：">
 
 
 
@@ -134,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/05/js纯函数/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/06/16/简单开发webpack插件/"/>
 
 
 
 
 
-  <title>js纯函数 | 向前奔跑的蚂蚁</title>
+  <title>简单开发webpack插件 | 向前奔跑的蚂蚁</title>
   
 
 
@@ -253,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/05/js纯函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/16/简单开发webpack插件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rick">
@@ -270,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js纯函数</h1>
+          <h1 class="post-title" itemprop="name headline">简单开发webpack插件</h1>
         
 
         <div class="post-meta">
@@ -282,8 +281,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-05T21:31:08+08:00">
-                2017-02-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-16T20:35:37+08:00">
+                2019-06-16
               </time>
             
 
@@ -320,82 +319,51 @@
       
 
       
-        <h2 id="js纯函数"><a href="#js纯函数" class="headerlink" title="js纯函数"></a>js纯函数</h2><h3 id="javascript纯函数"><a href="#javascript纯函数" class="headerlink" title="javascript纯函数"></a>javascript纯函数</h3><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>  纯函数是指不依赖于且不改变它作用域之外的变量状态的函数。<br>  也就是说，纯函数的返回值只由它调用时的参数决定，它的执行不依赖于系统的状态。</p>
-<p>  纯函数是函数式编程的一个基础。接下来我们看一个简单的例子。</p>
-<a id="more"></a>
-<p>   var values = { a: 1 };<br>    function impureFunction ( obj ) {<br>      var b = 1;</p>
-<pre><code>  obj = obj * b + 2;
-
-  return obj.a;
-}
-
-var c = impureFunction( values );
-</code></pre><p>// 现在 <code>values.a</code> 变成 3,  impureFunction 改变了它。<br>在上面的代码中，我们改变了参数对象中的一个属性。由于我们定义的函数改变的对象在我们的函数作用域之外，导致这个函数成为“不纯”的函数。</p>
-<pre><code>var values = { a: 1 };
-function impureFunction ( obj ) {
-  var b = 1;
-
-  obj = obj * b + 2;
-
-  return obj;
-}
-
-var c = impureFunction( values );
-</code></pre><p>上面的代码，我们只计算了作用域内的局部变量，没有任何作用域外部的变量被改变，因此这个函数是“纯函数”。</p>
-<p>／／纯函数是这样一种函数，即相同的输出，<br>    永远会得到相同的输出，而且没有任何可观察的副作用<br>    var xs  =   [1,2,3,4,5];<br>        //  纯函数<br>        xs.slice(0,3);<br>        //=&gt; [1,2,3]<br>        xs.slice(0,3);<br>        //=&gt; [1,2,3]<br>        xs.slice(0,3);<br>        //=&gt; [1,2,3]</p>
-<pre><code>    //  非纯函数
-    xs.splice(0,3);
-    //=&gt; [1,2,3]
-    xs.splice(0,3);
-    //=&gt; [4,5]
-    xs.splice(0,3);
-    //=&gt; []
-
-
- //将splice转换成纯函数
- // 1 自己
-var oldSplice=Array.prototype.splice;
-Array.prototype.splice = function(){
-    var newItem=JSON.parse(JSON.stringify(this));
-    var obj=Object.prototype.toString;
-    if(obj.call(arguments[0])===&quot;[object Boolean]&quot;){
-        console.log(arguments.length);
-        if(arguments.length&gt;3){
-            console.log(111);
-           return oldSplice.apply(this,Array.prototype.slice.call(arguments).slice(1));
-        }else{
-            console.log(22222);
-           return  newItem.slice(arguments[1],arguments[2])
-
-        }
-    }else{
-       return oldSplice.apply(this,arguments);
-    }
-}
-
-//参考答案
-   Array.prototype.splice = (function () {
-    var oldfn = Array.prototype.splice;
-    return function () {
-        var flag=Object.prototype.toString.call(arguments[0]) === &apos;[object Array]&apos;,
-            context=flag?this.concat():this,
-            arg=flag?arguments[0]:arguments;
-        return oldfn.apply(context, arg);
-    }
-})();
-
-
-var a=[1,2,3,4,5];var c=a.splice(0,3);console.log(a,c);
---&gt;[4, 5] [1, 2, 3]
-
-var a=[1,2,3,4,5];var c=a.splice([0,3]);console.log(a,c);
---&gt;[1, 2, 3, 4, 5] [1, 2, 3]
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">答案一</span><br><span class="line"></span><br><span class="line">var spliceFn = Array.prototype.splice;</span><br><span class="line">Array.prototype.splice = function()&#123;</span><br><span class="line">    var isWritable = arguments[0] === false ? false : true;</span><br><span class="line">    var self = isWritable ? this : this.slice(0);</span><br><span class="line">    var n = isWritable ? 0 : 1;</span><br><span class="line">    var args = Array.prototype.slice.call(arguments, n);</span><br><span class="line">    </span><br><span class="line">    答案二</span><br><span class="line"></span><br><span class="line">     Array.prototype.splice = (function () &#123;</span><br><span class="line">        var nativeSplice = Array.prototype.splice;</span><br><span class="line">        return function () &#123;</span><br><span class="line">            if (typeof arguments[0] === &apos;boolean&apos;) &#123;</span><br><span class="line">                var orgs = [].slice.call(arguments, 1);</span><br><span class="line">                var newArr = this.concat();</span><br><span class="line">                return nativeSplice.apply(newArr, orgs);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                return nativeSplice.apply(this, arguments);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)()</span><br></pre></td></tr></table></figure>
-<h3 id="使用纯函数的好处"><a href="#使用纯函数的好处" class="headerlink" title="使用纯函数的好处"></a>使用纯函数的好处</h3><ul>
-<li>首先它没有副作用，纯函数是不会修改作用域之外的状态，就意味着代码变得足够的简单和清晰；当你在调用一个纯函数的时候，你只要关注它的返回值，不用担心因为其他地方的问题影响里面出问题。</li>
-<li>纯函数是健壮的，改变执行次序不会对系统造成影响，因此纯函数的操作可以并行执行。</li>
-<li>纯函数非常容易进行单元测试，因为不需要考虑上下文环境，只需要考虑输入和输出。</li>
+        <h2 id="webpack简单插件开发"><a href="#webpack简单插件开发" class="headerlink" title="webpack简单插件开发"></a>webpack简单插件开发</h2><p><a href="https://webpack.js.org/contribute/writing-a-plugin/" target="_blank" rel="noopener">官方教程</a></p>
+<h3 id="创建插件"><a href="#创建插件" class="headerlink" title="创建插件"></a>创建插件</h3><h4 id="插件开发组成"><a href="#插件开发组成" class="headerlink" title="插件开发组成"></a>插件开发组成</h4><ul>
+<li>一个 JavaScript 命名函数。</li>
+<li>在插件函数的 prototype 上定义一个 apply 方法。</li>
+<li>指定一个绑定到 webpack 自身的事件钩子。</li>
+<li>处理 webpack 内部实例的特定数据。</li>
+<li>功能完成后调用 webpack 提供的回调。</li>
 </ul>
+<p>伪代码如下所示：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class MyWebpackPlugin &#123;</span><br><span class="line">constructor (options) &#123;</span><br><span class="line">this.options = options</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">apply (compiler) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = MyWebpackPlugin</span><br></pre></td></tr></table></figure></p>
+<h4 id="插件的常用对象-Compiler-和-Compilation"><a href="#插件的常用对象-Compiler-和-Compilation" class="headerlink" title="插件的常用对象 Compiler 和 Compilation"></a>插件的常用对象 Compiler 和 Compilation</h4><table>
+<thead>
+<tr>
+<th>常用对象</th>
+<th>提供的钩子函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compiler</td>
+<td>run,compile,compilation,make,emit,done</td>
+</tr>
+<tr>
+<td>Compilation</td>
+<td>buildModule,normalModuleLoader,succeedModule,finishModules,seal,optimize,after-seal</td>
+</tr>
+<tr>
+<td>Module Factory</td>
+<td>beforeResolver,afterResolver,module,parser</td>
+</tr>
+<tr>
+<td>Parser</td>
+<td>program,statement,call,expression</td>
+</tr>
+<tr>
+<td>Template</td>
+<td>hash,bootstrap,localVars,render</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>使用 compiler 的 emit 钩子</li>
+</ul>
+<p>emit 事件是将编译好的代码发射到指定的 stream 中触发，在这个钩子执行的时候，我们能从回调函数返回的 compilation 对象上拿到编译好的 stream。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compiler.hooks.emit.tap(&apos;xxx&apos;,(compilation)=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="在-webpack-中引用插件"><a href="#在-webpack-中引用插件" class="headerlink" title="在 webpack 中引用插件"></a>在 webpack 中引用插件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line">const MyWebpackPlugin = require(&apos;./webpack-plugin/index&apos;)</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">entry: &apos;./index.js&apos;,</span><br><span class="line">output: &#123;</span><br><span class="line">path: path.resolve(__dirname, &apos;dist&apos;),</span><br><span class="line">filename: &apos;bundle.js&apos;</span><br><span class="line">&#125;,</span><br><span class="line">module: &#123;</span><br><span class="line">rules: [</span><br><span class="line">&#123; test: /\.js$/, exclude: /node_modules/, loader: &quot;babel-loader&quot; &#125;</span><br><span class="line">]</span><br><span class="line">&#125;,</span><br><span class="line">plugins: [</span><br><span class="line">new MyWebpackPlugin()</span><br><span class="line">]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -411,14 +379,6 @@ var a=[1,2,3,4,5];var c=a.splice([0,3]);console.log(a,c);
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/技术/" rel="tag"># 技术</a>
-          
-            <a href="/tags/前端/" rel="tag"># 前端</a>
-          
-        </div>
-      
 
       
       
@@ -428,8 +388,8 @@ var a=[1,2,3,4,5];var c=a.splice([0,3]);console.log(a,c);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/27/js中call、bind、apply/" rel="next" title="js中call、call、apply">
-                <i class="fa fa-chevron-left"></i> js中call、call、apply
+              <a href="/2018/05/20/typescript基础简单了解/" rel="next" title="typescript简单了解一下">
+                <i class="fa fa-chevron-left"></i> typescript简单了解一下
               </a>
             
           </div>
@@ -437,10 +397,6 @@ var a=[1,2,3,4,5];var c=a.splice([0,3]);console.log(a,c);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/05/js高阶函数/" rel="prev" title="javascript高阶函数">
-                javascript高阶函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -565,7 +521,7 @@ var a=[1,2,3,4,5];var c=a.splice([0,3]);console.log(a,c);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js纯函数"><span class="nav-number">1.</span> <span class="nav-text">js纯函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript纯函数"><span class="nav-number">1.1.</span> <span class="nav-text">javascript纯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用纯函数的好处"><span class="nav-number">1.3.</span> <span class="nav-text">使用纯函数的好处</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack简单插件开发"><span class="nav-number">1.</span> <span class="nav-text">webpack简单插件开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建插件"><span class="nav-number">1.1.</span> <span class="nav-text">创建插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插件开发组成"><span class="nav-number">1.1.1.</span> <span class="nav-text">插件开发组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件的常用对象-Compiler-和-Compilation"><span class="nav-number">1.1.2.</span> <span class="nav-text">插件的常用对象 Compiler 和 Compilation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在-webpack-中引用插件"><span class="nav-number">1.1.3.</span> <span class="nav-text">在 webpack 中引用插件</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
