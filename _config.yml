@@ -4,12 +4,11 @@
 
 # Site
 title: 向前奔跑的蚂蚁
-subtitle:
+subtitle: gogogo
 description:
-author: 李良权
+author: Rick
 language:
 timezone:
-新浪博客: http://blog.sina.com.cn/lilliangquan
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -64,11 +63,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/Mr-Prune/Mr-Prune.github.io.git
+  repository: https://github.com/Chant-Lee/Chant-Lee.github.io.git
   branch: master
