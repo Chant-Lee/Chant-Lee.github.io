@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="webpack简单插件开发对插件的认识官方解释：插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。 webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后在引入，内置的插件在 webpack">
+<meta name="description" content="webpack简单插件开发对插件的认识官方解释：插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。 webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后再引入使用。内置的插件在webpac">
 <meta name="keywords" content="前端,webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack插件简单开发">
 <meta property="og:url" content="http://yoursite.com/2019/06/16/webpack插件简单开发/index.html">
 <meta property="og:site_name" content="向前奔跑的蚂蚁">
-<meta property="og:description" content="webpack简单插件开发对插件的认识官方解释：插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。 webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后在引入，内置的插件在 webpack">
+<meta property="og:description" content="webpack简单插件开发对插件的认识官方解释：插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。 webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后再引入使用。内置的插件在webpac">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-23T13:40:12.796Z">
+<meta property="og:updated_time" content="2019-06-23T13:50:52.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack插件简单开发">
-<meta name="twitter:description" content="webpack简单插件开发对插件的认识官方解释：插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。 webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后在引入，内置的插件在 webpack">
+<meta name="twitter:description" content="webpack简单插件开发对插件的认识官方解释：插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。 webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后再引入使用。内置的插件在webpac">
 
 
 
@@ -321,8 +321,8 @@
 
       
         <h2 id="webpack简单插件开发"><a href="#webpack简单插件开发" class="headerlink" title="webpack简单插件开发"></a>webpack简单插件开发</h2><h3 id="对插件的认识"><a href="#对插件的认识" class="headerlink" title="对插件的认识"></a>对插件的认识</h3><p>官方解释：插件是 <code>webpack</code> 的支柱功能。<code>webpack</code> 自身也是构建于，你在 <code>webpack</code> 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。</p>
-<p>webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后在引入，内置的插件在 webpack.optimize 对象上，我们可以直接使用。<a href="https://webpack.docschina.org/plugins" target="_blank" rel="noopener">常见的内置插件</a></p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h4><p>首先需要看下官方教程和api<a href="https://webpack.js.org/contribute/writing-a-plugin/" target="_blank" rel="noopener">官方教程</a></p>
+<p>webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后再引入使用。内置的插件在<code>webpack.optimize</code>对象上，我们可以直接使用。<a href="https://webpack.docschina.org/plugins" target="_blank" rel="noopener">常见的内置插件</a></p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h4><p>首先需要看下官方教程和 api <a href="https://webpack.js.org/contribute/writing-a-plugin/" target="_blank" rel="noopener">官方教程</a></p>
 <a id="more"></a>
 <h4 id="了解插件的基本组成"><a href="#了解插件的基本组成" class="headerlink" title="了解插件的基本组成"></a>了解插件的基本组成</h4><h5 id="插件开发组成"><a href="#插件开发组成" class="headerlink" title="插件开发组成"></a>插件开发组成</h5><ul>
 <li>一个 JavaScript 命名函数。</li>
