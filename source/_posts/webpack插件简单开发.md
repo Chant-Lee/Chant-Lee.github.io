@@ -9,12 +9,12 @@ tags: [webpack,前端]
 ### 对插件的认识
 官方解释：插件是 `webpack` 的支柱功能。`webpack` 自身也是构建于，你在 `webpack` 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。
 
-webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后在引入，内置的插件在 webpack.optimize 对象上，我们可以直接使用。[常见的内置插件](https://webpack.docschina.org/plugins)
+webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后再引入使用。内置的插件在` webpack.optimize `对象上，我们可以直接使用。[常见的内置插件](https://webpack.docschina.org/plugins)
 
 ### 准备工作
 #### 文档
 
-首先需要看下官方教程和api[官方教程](https://webpack.js.org/contribute/writing-a-plugin/)
+首先需要看下官方教程和 api [官方教程](https://webpack.js.org/contribute/writing-a-plugin/)
 
 <!-- more -->
 

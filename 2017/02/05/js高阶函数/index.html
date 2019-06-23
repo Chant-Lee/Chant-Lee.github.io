@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="技术,前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="javascript高阶函数高阶函数这是一个有趣的东西，也说明了javascript对象的强大，我们要做的就是输出一个helloworld。 高阶看上去就像是一种先进的编程技术的一个深奥术语【ps：我刚开始是这样子认为的。】 然而，在javascript中，高阶函数只是将函数作为参数或返回值的函数。我们来看一个helloworld的简单例子。">
+<meta name="keywords" content="技术,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript高阶函数">
+<meta property="og:url" content="http://yoursite.com/2017/02/05/js高阶函数/index.html">
+<meta property="og:site_name" content="向前奔跑的蚂蚁">
+<meta property="og:description" content="javascript高阶函数高阶函数这是一个有趣的东西，也说明了javascript对象的强大，我们要做的就是输出一个helloworld。 高阶看上去就像是一种先进的编程技术的一个深奥术语【ps：我刚开始是这样子认为的。】 然而，在javascript中，高阶函数只是将函数作为参数或返回值的函数。我们来看一个helloworld的简单例子。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-16T12:49:01.730Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript高阶函数">
+<meta name="twitter:description" content="javascript高阶函数高阶函数这是一个有趣的东西，也说明了javascript对象的强大，我们要做的就是输出一个helloworld。 高阶看上去就像是一种先进的编程技术的一个深奥术语【ps：我刚开始是这样子认为的。】 然而，在javascript中，高阶函数只是将函数作为参数或返回值的函数。我们来看一个helloworld的简单例子。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'mr_prune'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/05/js高阶函数/"/>
+
+
+
+
+
+  <title>javascript高阶函数 | 向前奔跑的蚂蚁</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">向前奔跑的蚂蚁</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">gogogo</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/05/js高阶函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chant_Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="向前奔跑的蚂蚁">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javascript高阶函数</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-05T21:31:08+08:00">
+                2017-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="javascript高阶函数"><a href="#javascript高阶函数" class="headerlink" title="javascript高阶函数"></a>javascript高阶函数</h2><h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><p>这是一个有趣的东西，也说明了javascript对象的强大，我们要做的就是输出一个helloworld。</p>
+<p>高阶看上去就像是一种先进的编程技术的一个深奥术语【ps：我刚开始是这样子认为的。】</p>
+<p>然而，在javascript中，高阶函数只是将函数作为参数或返回值的函数。我们来看一个helloworld的简单例子。</p>
+<a id="more"></a>
+<pre><code> var test = function(p1){
+
+    this.add = function (p2){
+
+        return p1 + &apos; &apos; + p2;
+    };
+    return add;
+};
+</code></pre><p>我们可以这样子使用这个函数：</p>
+<pre><code>console.log(test(&apos;Hello&apos;)(&apos;World&apos;));
+</code></pre><p>上面的这个过程我们可以简写一下就会更加明白，实际上test(‘Hello’)是一个函数。</p>
+<pre><code>var t=test(&apos;Hello&apos;);
+t(&apos;World&apos;);
+&quot;Hello World&quot;
+</code></pre><p>从上面我们可以看出，高阶函数可以使代码更加的简洁、高效。</p>
+<p>接下来来一个简单实例</p>
+<pre><code>add = function(a,b){
+    return a + b;
+};
+function math(func,array){
+    return func(array[0],array[1]);
+}
+console.log(math(add,[1,2]));
+</code></pre><p>在上面的实例中，传进去的add是一个参数，返回的时候是一个函数。</p>
+<p>接下来，看一下应用场景</p>
+<h4 id="1-回调函数"><a href="#1-回调函数" class="headerlink" title="1 回调函数"></a>1 回调函数</h4><p>通过回调函数将业务的重点聚焦在回调函数中，而不必每次都要重复编写遍历代码。<br>例如ajax请求</p>
+<h4 id="2-偏函数"><a href="#2-偏函数" class="headerlink" title="2 偏函数"></a>2 偏函数</h4><p>  作为将函数当作返回值输出的典型应用就是偏函数。看个类型判断的例子。</p>
+<p>  js的对象有三个属性：原型、类、可扩展性。判断类型的代码如下</p>
+<pre><code>isString = function(obj){
+    return Object.prototype.toString.call(obj)                         === &quot;[object String]&quot;;
+}
+isNumber = function(obj){
+    return Object.prototype.toString.call(obj)                         === &quot;[object Number]&quot;;
+}
+isArray = function(obj){
+    return Object.prototype.toString.call(obj)                         === &quot;[object Array]&quot;;
+}
+</code></pre><p>这几个函数的大部分代码是重复的，这是高阶函数的便华丽的登场了。</p>
+<pre><code>isType = function(type) {
+    return function(obj) {
+        return Object.prototype.toString.call(obj) === &quot;[object &quot; + type + &quot;]&quot;;
+    }
+}
+
+isString = isType(&apos;String&apos;);
+isNumber = isType(&apos;Number&apos;);
+isArray = isType(&apos;Array&apos;);
+</code></pre><p>所以通过指定部分参数来返回一个新的定制函数的形式就是偏函数。</p>
+<h4 id="3-currying（柯里化）"><a href="#3-currying（柯里化）" class="headerlink" title="3 currying（柯里化）"></a>3 currying（柯里化）</h4><p>currying又称为部分求值，一个currying的函数首先会接受一些参数，接受这些参数之后，函数并不会立即求值，而是继续返回另一个函数，刚才传入的参数在函数形成的闭包被保存起来。待到函数呗真正需要求值的时候，之前传入的所有参数都会被一次性用于求值。</p>
+<pre><code>var currying = function(fn) {
+    var args = [];
+
+    return function() {
+        if (arguments.length === 0) {
+            return fn.applay(this, args);
+        } else {
+            args = args.concat(arguments);
+            return arguments.callee;
+        }
+    }
+}
+</code></pre><p>假设我们以计算一个月每天花销为例：</p>
+<pre><code>var currying = function(fn) {
+debugger;
+    var args = [];
+
+    return function() {
+        if (arguments.length === 0) {
+            return fn.apply(this, args);
+        } else {
+            Array.prototype.push.apply(args, arguments);
+            return arguments.callee;
+        }
+    }
+}
+
+cost = function(){
+    var sum = 0;
+    for (var i = 0, len = arguments.length; i &lt; len; i++) {
+        sum += arguments[i];
+    }
+
+    return sum;
+}
+var cost = currying(cost);
+
+cost(100);
+cost(200);
+alert(cost())
+</code></pre><h4 id="4-事件节流"><a href="#4-事件节流" class="headerlink" title="4 事件节流"></a>4 事件节流</h4><p>　　在某些场景下，某些事件可能会被重复的触发，但事件处理函数并不需要每次都执行。比如在window.resize事件中进行复杂的逻辑计算，如果用户频繁的改变浏览器大小，复杂计算会对性能造成严重影响；有时这些逻辑计算并不需要每次rezise时都触发，只需要计算有限的几次便可以。这时我们需要根据时间段来忽略一些事件请求。请看以下节流函数：</p>
+<p> function throttle(fn, interval) {<br>      var doing = false;</p>
+<pre><code>  return function() {
+    if (doing) {
+      return;
+    }
+    doing = true;
+    fn.apply(this, arguments);
+    setTimeout(function() {
+      doing = false;
+    }, interval);
+  }
+}
+
+window.onresize = throttle(function(){
+    console.log(&apos;execute&apos;);
+}, 500);
+</code></pre><p>　　通过控制函数执行时间，可以在函数执行次数与功能需求之间达到完美平衡。另一个事件是mousemove。如果我们给一个dom元素绑定该事件，鼠标在改元素上移动时，该事件便会重复触发</p>
+<h4 id="5-事件结束"><a href="#5-事件结束" class="headerlink" title="5 事件结束"></a>5 事件结束</h4><p>　　对于某些可以频繁触发的事件，有时候我们希望在事件结束后进行一系列操作。这时我们可以利用高阶函数做如下处理：</p>
+<pre><code>function debounce(fn, interval) {
+    var timer = null;
+
+  function delay() {
+    var target = this;
+    var args = arguments;
+    return setTimeout(function(){
+      fn.apply(target, args);
+    }, interval);
+  }
+
+  return function() {
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    timer = delay.apply(this, arguments);
+  }
+};
+window.onresize = throttle(function(){
+    console.log(&apos;resize end&apos;);
+}, 500);
+</code></pre><p>如果在这一过程中事件被触发则清除上一次事件句柄，重新绑定执行时间</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术/" rel="tag"># 技术</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/27/js中this碰到return时/" rel="next" title="this碰到return时">
+                <i class="fa fa-chevron-left"></i> this碰到return时
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/05/js纯函数/" rel="prev" title="js纯函数">
+                js纯函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Chant_Lee" />
+          <p class="site-author-name" itemprop="name">Chant_Lee</p>
+           
+              <p class="site-description motion-element" itemprop="description">写好每一段代码</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript高阶函数"><span class="nav-number">1.</span> <span class="nav-text">javascript高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高阶函数"><span class="nav-number">1.1.</span> <span class="nav-text">高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-回调函数"><span class="nav-number">1.1.1.</span> <span class="nav-text">1 回调函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-偏函数"><span class="nav-number">1.1.2.</span> <span class="nav-text">2 偏函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-currying（柯里化）"><span class="nav-number">1.1.3.</span> <span class="nav-text">3 currying（柯里化）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-事件节流"><span class="nav-number">1.1.4.</span> <span class="nav-text">4 事件节流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-事件结束"><span class="nav-number">1.1.5.</span> <span class="nav-text">5 事件结束</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chant_Lee</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
