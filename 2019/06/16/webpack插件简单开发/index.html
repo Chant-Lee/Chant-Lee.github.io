@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="webpack简单插件开发官方教程 创建插件插件开发组成 一个 JavaScript 命名函数。 在插件函数的 prototype 上定义一个 apply 方法。 指定一个绑定到 webpack 自身的事件钩子。 处理 webpack 内部实例的特定数据。 功能完成后调用 webpack 提供的回调。  伪代码如下所示：">
+<meta name="description" content="webpack简单插件开发对插件的认识官方解释：插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。 webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后在引入，内置的插件在 webpack">
 <meta name="keywords" content="前端,webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack插件简单开发">
 <meta property="og:url" content="http://yoursite.com/2019/06/16/webpack插件简单开发/index.html">
 <meta property="og:site_name" content="向前奔跑的蚂蚁">
-<meta property="og:description" content="webpack简单插件开发官方教程 创建插件插件开发组成 一个 JavaScript 命名函数。 在插件函数的 prototype 上定义一个 apply 方法。 指定一个绑定到 webpack 自身的事件钩子。 处理 webpack 内部实例的特定数据。 功能完成后调用 webpack 提供的回调。  伪代码如下所示：">
+<meta property="og:description" content="webpack简单插件开发对插件的认识官方解释：插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。 webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后在引入，内置的插件在 webpack">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-16T13:14:12.879Z">
+<meta property="og:updated_time" content="2019-06-23T13:40:12.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack插件简单开发">
-<meta name="twitter:description" content="webpack简单插件开发官方教程 创建插件插件开发组成 一个 JavaScript 命名函数。 在插件函数的 prototype 上定义一个 apply 方法。 指定一个绑定到 webpack 自身的事件钩子。 处理 webpack 内部实例的特定数据。 功能完成后调用 webpack 提供的回调。  伪代码如下所示：">
+<meta name="twitter:description" content="webpack简单插件开发对插件的认识官方解释：插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。 webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后在引入，内置的插件在 webpack">
 
 
 
@@ -256,7 +256,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/16/webpack插件简单开发/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="mr_prune">
+      <meta itemprop="name" content="Chant_Lee">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
@@ -320,18 +320,20 @@
       
 
       
-        <h2 id="webpack简单插件开发"><a href="#webpack简单插件开发" class="headerlink" title="webpack简单插件开发"></a>webpack简单插件开发</h2><p><a href="https://webpack.js.org/contribute/writing-a-plugin/" target="_blank" rel="noopener">官方教程</a></p>
-<h3 id="创建插件"><a href="#创建插件" class="headerlink" title="创建插件"></a>创建插件</h3><h4 id="插件开发组成"><a href="#插件开发组成" class="headerlink" title="插件开发组成"></a>插件开发组成</h4><ul>
+        <h2 id="webpack简单插件开发"><a href="#webpack简单插件开发" class="headerlink" title="webpack简单插件开发"></a>webpack简单插件开发</h2><h3 id="对插件的认识"><a href="#对插件的认识" class="headerlink" title="对插件的认识"></a>对插件的认识</h3><p>官方解释：插件是 <code>webpack</code> 的支柱功能。<code>webpack</code> 自身也是构建于，你在 <code>webpack</code> 配置中用到的相同的插件系统之上！插件目的在于解决 loader 无法实现的其他事。</p>
+<p>webpack 的插件有很多，有内置插件当然还有社区提供的插件，当然你自己也可以开发一个插件。社区的插件我们需要使用 npm 先进行安装，然后在引入，内置的插件在 webpack.optimize 对象上，我们可以直接使用。<a href="https://webpack.docschina.org/plugins" target="_blank" rel="noopener">常见的内置插件</a></p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h4><p>首先需要看下官方教程和api<a href="https://webpack.js.org/contribute/writing-a-plugin/" target="_blank" rel="noopener">官方教程</a></p>
+<a id="more"></a>
+<h4 id="了解插件的基本组成"><a href="#了解插件的基本组成" class="headerlink" title="了解插件的基本组成"></a>了解插件的基本组成</h4><h5 id="插件开发组成"><a href="#插件开发组成" class="headerlink" title="插件开发组成"></a>插件开发组成</h5><ul>
 <li>一个 JavaScript 命名函数。</li>
 <li>在插件函数的 prototype 上定义一个 apply 方法。</li>
 <li>指定一个绑定到 webpack 自身的事件钩子。</li>
 <li>处理 webpack 内部实例的特定数据。</li>
 <li>功能完成后调用 webpack 提供的回调。</li>
 </ul>
-<p>伪代码如下所示：</p>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class MyWebpackPlugin &#123;</span><br><span class="line">    constructor (options) &#123;</span><br><span class="line">        this.options = options</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    apply (compiler) &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = MyWebpackPlugin</span><br></pre></td></tr></table></figure>
-<h4 id="插件的常用对象-Compiler-和-Compilation"><a href="#插件的常用对象-Compiler-和-Compilation" class="headerlink" title="插件的常用对象 Compiler 和 Compilation"></a>插件的常用对象 Compiler 和 Compilation</h4><table>
+<p>伪代码如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class MyWebpackPlugin &#123;</span><br><span class="line">    constructor (options) &#123;</span><br><span class="line">        this.options = options</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    apply (compiler) &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = MyWebpackPlugin</span><br></pre></td></tr></table></figure></p>
+<h4 id="常用-api"><a href="#常用-api" class="headerlink" title="常用 api"></a>常用 api</h4><p>前面讲了 webpack 编写插件时提供了大量的 API, 好多是我们不经常用的，下面总结了一些常用的 API, 这些 API 主要存储在 compilation 对象中</p>
+<table>
 <thead>
 <tr>
 <th>常用对象</th>
@@ -341,7 +343,7 @@
 <tbody>
 <tr>
 <td>Compiler</td>
-<td>run,compile,compilation,make,emit,done</td>
+<td>run,compile,compilation,<br>make,emit,done</td>
 </tr>
 <tr>
 <td>Compilation</td>
@@ -349,7 +351,7 @@
 </tr>
 <tr>
 <td>Module Factory</td>
-<td>beforeResolver,afterResolver,module,parser</td>
+<td>beforeResolver,afterResolver,<br>module,parser</td>
 </tr>
 <tr>
 <td>Parser</td>
@@ -362,11 +364,32 @@
 </tbody>
 </table>
 <ul>
-<li>使用 compiler 的 emit 钩子</li>
+<li><p><code>compilation.modules</code>：编译后的（内置输入的）模块数组。每个模块管理控制来源代码库 (source library) 中的原始文件 (raw file) 的构建。 module.fileDependencies：模块中引入的源文件路径构成的数组。这包括源 JavaScript 文件本身（例如：index.js）以及它所需的所有依赖资源文件（样式表、图像等）。审查依赖，可以用于查看一个模块有哪些从属的源文件。</p>
+</li>
+<li><p><code>compilation.chunks</code>：编译后的（构建输出的）chunk 数组。每个 chunk 所管理控制的最终渲染资源的组合，在 chunk 中还有以下属性：</p>
+<ul>
+<li>chunk.modules：chunk 中引入的模块构成的数组。通过扩展 (extension) 可以审查每个模块的依赖，来查看哪些原始源文件被注入到 chunk 中。</li>
+<li>chunk.files：chunk 生成的输出文件名构成的数组。你可以从 compilation.assets 表中访问这些资源来源。</li>
 </ul>
-<p>emit 事件是将编译好的代码发射到指定的 stream 中触发，在这个钩子执行的时候，我们能从回调函数返回的 compilation 对象上拿到编译好的 stream。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compiler.hooks.emit.tap(&apos;xxx&apos;,(compilation)=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="在-webpack-中引用插件"><a href="#在-webpack-中引用插件" class="headerlink" title="在 webpack 中引用插件"></a>在 webpack 中引用插件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line">const MyWebpackPlugin = require(&apos;./webpack-plugin/index&apos;)</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  entry: &apos;./index.js&apos;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, &apos;dist&apos;),</span><br><span class="line">    filename: &apos;bundle.js&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; test: /\.js$/, exclude: /node_modules/, loader: &quot;babel-loader&quot; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    new MyWebpackPlugin()</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>compilation.assets 包含所有模块的对象，我们可以通过他来获取某个文件信息和内容，也可也可以修改获取的文件，并且也可以向该对象中添加文件（或文件夹）</p>
+<ul>
+<li>assets[filename].source() 读取输出资源的内容</li>
+<li>assets[filename].size() 读取输出资源的文件大小</li>
+</ul>
+</li>
+<li>compiler.options.plugins 获取配置中使用的插件列表</li>
+<li>watch.compiler.watchFileSystem.watcher.mtimes 获取发生变化的文件列表</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 监听文件变化事件</span><br><span class="line">compiler.plugin(&apos;watch-run&apos;,(watch,callback)=&gt;&#123;</span><br><span class="line">    // 获取发生变化的文件列表（数组）</span><br><span class="line">   let  filesChange = watch.compiler.watchFileSystem.watcher.mtimes;</span><br><span class="line">   callback();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">compiler.plugin(&apos;after-compile&apos;, (compilation, callback) =&gt; &#123;</span><br><span class="line">    // 把要观察的文件路径filePath 添加到webpack观察数组中</span><br><span class="line">    let filesAry = [...compilation.fileDependencies]</span><br><span class="line">    filesAry.push(filePath);</span><br><span class="line">    compilation.fileDependencies = filesAry;</span><br><span class="line">    callback();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="实践编写一个简单插件插件"><a href="#实践编写一个简单插件插件" class="headerlink" title="实践编写一个简单插件插件"></a>实践编写一个简单插件插件</h3><h4 id="首先第一步，使用-compiler-的-emit-钩子"><a href="#首先第一步，使用-compiler-的-emit-钩子" class="headerlink" title="首先第一步，使用 compiler 的 emit 钩子"></a>首先第一步，使用 compiler 的 emit 钩子</h4><p>emit 事件是将编译好的代码发射到指定的 stream 中触发，在这个钩子执行的时候，我们能从回调函数返回的 compilation 对象上拿到编译好的 stream。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compiler.hooks.emit.tap(&apos;aaa&apos;,(compilation)=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
+<h5 id="第二步，-遍历-compilation-assets-对象，然后调用Object-source-得到内容"><a href="#第二步，-遍历-compilation-assets-对象，然后调用Object-source-得到内容" class="headerlink" title="第二步， 遍历 compilation.assets 对象，然后调用Object.source () 得到内容"></a>第二步， 遍历 compilation.assets 对象，然后调用Object.source () 得到内容</h5><p>我们需要<strong>compilation.assets</strong> 通过遍历它，我们可以得到bound.js</p>
+<h5 id="第三步，准备好一个去掉注释的正则"><a href="#第三步，准备好一个去掉注释的正则" class="headerlink" title="第三步，准备好一个去掉注释的正则"></a>第三步，准备好一个去掉注释的正则</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const reg = /(&quot;([^\\\&quot;]*(\\.)?)*&quot;)|(&apos;([^\\\&apos;]*(\\.)?)*&apos;)|(\/&#123;2,&#125;.*?(\r|\n))|(\/\*(\n|.)*?\*\/)|(\/\*\*\*\*\*\*\/)/g</span><br></pre></td></tr></table></figure>
+<h5 id="第四步，更新-compilation-assets-data-对象"><a href="#第四步，更新-compilation-assets-data-对象" class="headerlink" title="第四步，更新 compilation.assets [data] 对象"></a>第四步，更新 compilation.assets [data] 对象</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">compilation.assets[data] = &#123;</span><br><span class="line">    source()&#123;</span><br><span class="line">        return content</span><br><span class="line">    &#125;,</span><br><span class="line">    size()&#123;</span><br><span class="line">        return content.length</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="完整代码如下"><a href="#完整代码如下" class="headerlink" title="完整代码如下"></a>完整代码如下</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">const DEFAULT_OPTIONS = &#123;</span><br><span class="line">    name: &apos;test&apos;</span><br><span class="line">&#125;</span><br><span class="line">class MyWebpackPlugin &#123;</span><br><span class="line">    constructor(options = &#123;&#125;) &#123;</span><br><span class="line">        this.options = Object.assign(&#123;&#125;, DEFAULT_OPTIONS, options)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    apply(compiler) &#123;</span><br><span class="line">        // console.log(JSON.stringify(compiler, null, 4))</span><br><span class="line">        compiler.plugin(&apos;compile&apos;, (params) =&gt; &#123;</span><br><span class="line">            console.log(&apos;=====开始编译=====&apos;)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        compiler.plugin(&quot;compilation&quot;, (compilation) =&gt; &#123;</span><br><span class="line">            console.log(&quot;=====正在编译ing=====&quot;)</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        const reg = /(&quot;([^\\\&quot;]*(\\.)?)*&quot;)|(&apos;([^\\\&apos;]*(\\.)?)*&apos;)|(\/&#123;2,&#125;.*?(\r|\n))|(\/\*(\n|.)*?\*\/)|(\/\*\*\*\*\*\*\/)/g</span><br><span class="line">        compiler.hooks.emit.tap(&apos;MyWebpackPlugin&apos;, (compilation) =&gt; &#123;</span><br><span class="line">            Object.keys(compilation.assets).forEach((data) =&gt; &#123;</span><br><span class="line">                let content = compilation.assets[data].source()</span><br><span class="line">                content = content.replace(reg, (word) =&gt; &#123;</span><br><span class="line">                    return /^\/&#123;2,&#125;/.test(word) || /^\/\*!/.test(word) || /^\/\*&#123;3,&#125;\//.test(word) ? &quot;&quot; : word;</span><br><span class="line">                &#125;);</span><br><span class="line">                compilation.assets[data] = &#123;</span><br><span class="line">                    source() &#123;</span><br><span class="line">                        return content</span><br><span class="line">                    &#125;,</span><br><span class="line">                    size() &#123;</span><br><span class="line">                        return content.length</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">        compiler.hooks.done.tapAsync(&apos;DonePluginv&apos;, (name, callback) =&gt; &#123;</span><br><span class="line">            console.log(&apos; 全部编译完成&apos;)</span><br><span class="line">            callback()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = MyWebpackPlugin</span><br></pre></td></tr></table></figure>
+<h5 id="最后-在-webpack-中引用插件测试"><a href="#最后-在-webpack-中引用插件测试" class="headerlink" title="最后  在 webpack 中引用插件测试"></a>最后  在 webpack 中引用插件测试</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line">const MyWebpackPlugin = require(&apos;./webpack-plugin/index&apos;)</span><br><span class="line">const MyAddOptionPlugin = require(&apos;./webpack-plugin/add-name&apos;)</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  mode: &apos;development&apos;,</span><br><span class="line">  entry: &apos;./index.js&apos;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, &apos;dist&apos;),</span><br><span class="line">    filename: &apos;bundle.js&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; test: /\.js$/, exclude: /node_modules/, loader: &quot;babel-loader&quot; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    new MyWebpackPlugin(),</span><br><span class="line">    </span><br><span class="line">    new MyAddOptionPlugin(&#123; name: &apos;chant-lee&apos; &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong><a href="https://github.com/Chant-Lee/webpack-plugin" target="_blank" rel="noopener">插件地址</a></strong></p>
+
       
     </div>
     
@@ -472,8 +495,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
-               alt="mr_prune" />
-          <p class="site-author-name" itemprop="name">mr_prune</p>
+               alt="Chant_Lee" />
+          <p class="site-author-name" itemprop="name">Chant_Lee</p>
            
               <p class="site-description motion-element" itemprop="description">写好每一段代码</p>
           
@@ -531,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack简单插件开发"><span class="nav-number">1.</span> <span class="nav-text">webpack简单插件开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建插件"><span class="nav-number">1.1.</span> <span class="nav-text">创建插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插件开发组成"><span class="nav-number">1.1.1.</span> <span class="nav-text">插件开发组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件的常用对象-Compiler-和-Compilation"><span class="nav-number">1.1.2.</span> <span class="nav-text">插件的常用对象 Compiler 和 Compilation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在-webpack-中引用插件"><span class="nav-number">1.1.3.</span> <span class="nav-text">在 webpack 中引用插件</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack简单插件开发"><span class="nav-number">1.</span> <span class="nav-text">webpack简单插件开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对插件的认识"><span class="nav-number">1.1.</span> <span class="nav-text">对插件的认识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.2.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文档"><span class="nav-number">1.2.1.</span> <span class="nav-text">文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#了解插件的基本组成"><span class="nav-number">1.2.2.</span> <span class="nav-text">了解插件的基本组成</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#插件开发组成"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">插件开发组成</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用-api"><span class="nav-number">1.2.3.</span> <span class="nav-text">常用 api</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实践编写一个简单插件插件"><span class="nav-number">1.3.</span> <span class="nav-text">实践编写一个简单插件插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#首先第一步，使用-compiler-的-emit-钩子"><span class="nav-number">1.3.1.</span> <span class="nav-text">首先第一步，使用 compiler 的 emit 钩子</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第二步，-遍历-compilation-assets-对象，然后调用Object-source-得到内容"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">第二步， 遍历 compilation.assets 对象，然后调用Object.source () 得到内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三步，准备好一个去掉注释的正则"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">第三步，准备好一个去掉注释的正则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第四步，更新-compilation-assets-data-对象"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">第四步，更新 compilation.assets [data] 对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完整代码如下"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">完整代码如下</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最后-在-webpack-中引用插件测试"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">最后  在 webpack 中引用插件测试</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -558,7 +581,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">mr_prune</span>
+  <span class="author" itemprop="copyrightHolder">Chant_Lee</span>
 </div>
 
 
